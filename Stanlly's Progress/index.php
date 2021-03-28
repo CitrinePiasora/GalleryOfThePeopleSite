@@ -18,13 +18,13 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Home</a>
+                    <a class="nav-link" href="index.php">Home</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Galleries
                     </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="z-index: 1;">
                         <a class="dropdown-item" href="redirectGallery.php?category=paintings">Paintings</a>
                         <a class="dropdown-item" href="redirectGallery.php?category=sculptures">Sculptures</a>
                         <a class="dropdown-item" href="redirectGallery.php?category=photography">Photographs</a>
