@@ -40,7 +40,7 @@
         $category = $_GET["category"];
         include "connect.php";
     ?>
-    <div class="container">
+    <div class="container" style="z-index:-1;">
         <?php
             $result = $db->query("select * from $category");
             while($row = $result -> fetch_row()) {
