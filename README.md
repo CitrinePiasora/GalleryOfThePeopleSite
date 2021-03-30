@@ -1,5 +1,5 @@
 # WebApplicationProject: Gallery of the People
-###Members:
+### Members:
 - Stanlly
 - Aqsha
 - Owen
