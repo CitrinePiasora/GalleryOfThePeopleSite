@@ -1,2 +1,5 @@
-# WebApplicationProject
-Web Application Project (Online Galllery) members: Aqsha, Stanlly and Owen
+# WebApplicationProject: Gallery of the People
+###Members:
+- Stanlly
+- Aqsha
+- Owen
