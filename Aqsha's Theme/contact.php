@@ -34,7 +34,7 @@
         <header class="site-header container-fluid">
             <div class="top-header">
                 <div class="logo col-md-6 col-sm-6">
-                    <h1><a href="index.html"><em>GalleryOf</em>ThePeople</a></h1>
+                    <h1><a href="blog.php"><em>GalleryOf</em>ThePeople</a></h1>
                     <span>Responsive HTML5 Template</span>
                 </div> <!-- /.logo -->
                 <div class="social-top col-md-6 col-sm-6">
@@ -65,63 +65,63 @@
                     <div class="menu-wrapper col-md-9 col-sm-6 col-xs-4">
                         <a href="#" class="toggle-menu visible-sm visible-xs"><i class="fa fa-bars"></i></a>
                         <ul class="sf-menu hidden-xs hidden-sm">
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="services.html">Services</a></li>
+                            <li><a href="blog.php">Home</a></li>
+                            <li><a href="services.php">Services</a></li>
                             <li><a href="#">Artworks</a><!-- changed Projects to Artworks-->
                                 <ul>
-                                    <li><a href="projects-2.html">Paintings</a></li>
-                                    <li><a href="projects-3.html">Sculptures</a></li>
-                                    <li><a href="project-details.html">Photography</a></li>
+                                    <li><a href="projects-2.php">Paintings</a></li>
+                                    <li><a href="projects-3.php">Sculptures</a></li>
+                                    <li><a href="project-details.php">Photography</a></li>
                                     <!-- ADDED ANOTHER LIST   START-->
-                                    <li><a href="project-details.html">Digital Art</a></li>
+                                    <li><a href="project-details.php">Digital Art</a></li>
                                     <!-- ADDED ANOTHER LIST   START-->
                                 </ul>
                             </li>
                             <li><a href="#">Blog</a>
                                 <ul>
-                                    <li><a href="blog.html">Blog Masonry</a></li>
-                                    <li><a href="blog-single.html">Post Single</a></li>
+                                    <li><a href="blog.php">Blog Masonry</a></li>
+                                    <li><a href="blog-single.php">Post Single</a></li>
                                 </ul>
                             </li>
                             <li><a href="#">Pages</a>
                                 <ul>
-                                    <li><a href="our-team.html">Our Team</a></li>
-                                    <li><a href="archives.html">Archives</a></li>
-                                    <li><a href="grids.html">Columns</a></li>
-                                    <li><a href="404.html">404 Page</a></li>
+                                    <li><a href="our-team.php">Our Team</a></li>
+                                    <li><a href="archives.php">Archives</a></li>
+                                    <li><a href="grids.php">Columns</a></li>
+                                    <li><a href="404.php">404 Page</a></li>
                                 </ul>
                             </li>
-                            <li class="active"><a href="contact.html">About Us</a></li>
+                            <li class="active"><a href="contact.php">About Us</a></li>
                         </ul>
                     </div> <!-- /.menu-wrapper -->
                 </div> <!-- /.row -->
             </div> <!-- /.main-header -->
             <div id="responsive-menu">
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="services.html">Services</a></li>
+                    <li><a href="blog.php">Home</a></li>
+                    <li><a href="services.php">Services</a></li>
                     <li><a href="#">Projects</a>
                         <ul>
-                            <li><a href="projects-2.html">Two Columns</a></li>
-                            <li><a href="projects-3.html">Three Columns</a></li>
-                            <li><a href="project-details.html">Project Single</a></li>
+                            <li><a href="projects-2.php">Two Columns</a></li>
+                            <li><a href="projects-3.php">Three Columns</a></li>
+                            <li><a href="project-details.php">Project Single</a></li>
                         </ul>
                     </li>
                     <li><a href="#">Blog</a>
                         <ul>
-                            <li><a href="blog.html">Blog Masonry</a></li>
-                            <li><a href="blog-single.html">Post Single</a></li>
+                            <li><a href="blog.php">Blog Masonry</a></li>
+                            <li><a href="blog-single.php">Post Single</a></li>
                         </ul>
                     </li>
                     <li><a href="#">Pages</a>
                         <ul>
-                            <li><a href="our-team.html">Our Team</a></li>
-                            <li><a href="archives.html">Archives</a></li>
-                            <li><a href="grids.html">Columns</a></li>
-                            <li><a href="404.html">404 Page</a></li>
+                            <li><a href="our-team.php">Our Team</a></li>
+                            <li><a href="archives.php">Archives</a></li>
+                            <li><a href="grids.php">Columns</a></li>
+                            <li><a href="404.php">404 Page</a></li>
                         </ul>
                     </li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="contact.php">Contact</a></li>
                 </ul>
             </div>
         </header> <!-- /.site-header -->

@@ -5,7 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
     <head>
         <meta charset="utf-8">
-        <title>Artcore - 404 Error Page</title>
+        <title>Artcore - Archives</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
 
@@ -34,7 +34,7 @@
         <header class="site-header container-fluid">
             <div class="top-header">
                 <div class="logo col-md-6 col-sm-6">
-                    <h1><a href="index.html"><em>Art</em>Core</a></h1>
+                    <h1><a href="blog.php"><em>Art</em>Core</a></h1>
                     <span>Responsive HTML5 Template</span>
                 </div> <!-- /.logo -->
                 <div class="social-top col-md-6 col-sm-6">
@@ -65,60 +65,60 @@
                     <div class="menu-wrapper col-md-9 col-sm-6 col-xs-4">
                         <a href="#" class="toggle-menu visible-sm visible-xs"><i class="fa fa-bars"></i></a>
                         <ul class="sf-menu hidden-xs hidden-sm">
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="services.html">Services</a></li>
+                            <li><a href="blog.php">Home</a></li>
+                            <li><a href="services.php">Services</a></li>
                             <li><a href="#">Projects</a>
                                 <ul>
-                                    <li><a href="projects-2.html">Two Columns</a></li>
-                                    <li><a href="projects-3.html">Three Columns</a></li>
-                                    <li><a href="project-details.html">Project Single</a></li>
+                                    <li><a href="projects-2.php">Two Columns</a></li>
+                                    <li><a href="projects-3.php">Three Columns</a></li>
+                                    <li><a href="project-details.php">Project Single</a></li>
                                 </ul>
                             </li>
                             <li><a href="#">Blog</a>
                                 <ul>
-                                    <li><a href="blog.html">Blog Masonry</a></li>
-                                    <li><a href="blog-single.html">Post Single</a></li>
+                                    <li><a href="blog.php">Blog Masonry</a></li>
+                                    <li><a href="blog-single.php">Post Single</a></li>
                                 </ul>
                             </li>
                             <li class="active"><a href="#">Pages</a>
                                 <ul>
-                                    <li><a href="our-team.html">Our Team</a></li>
-                                    <li><a href="archives.html">Archives</a></li>
-                                    <li><a href="grids.html">Columns</a></li>
-                                    <li><a href="404.html">404 Page</a></li>
+                                    <li><a href="our-team.php">Our Team</a></li>
+                                    <li><a href="archives.php">Archives</a></li>
+                                    <li><a href="grids.php">Columns</a></li>
+                                    <li><a href="404.php">404 Page</a></li>
                                 </ul>
                             </li>
-                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="contact.php">Contact</a></li>
                         </ul>
                     </div> <!-- /.menu-wrapper -->
                 </div> <!-- /.row -->
             </div> <!-- /.main-header -->
             <div id="responsive-menu">
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="services.html">Services</a></li>
+                    <li><a href="blog.php">Home</a></li>
+                    <li><a href="services.php">Services</a></li>
                     <li><a href="#">Projects</a>
                         <ul>
-                            <li><a href="projects-2.html">Two Columns</a></li>
-                            <li><a href="projects-3.html">Three Columns</a></li>
-                            <li><a href="project-details.html">Project Single</a></li>
+                            <li><a href="projects-2.php">Two Columns</a></li>
+                            <li><a href="projects-3.php">Three Columns</a></li>
+                            <li><a href="project-details.php">Project Single</a></li>
                         </ul>
                     </li>
                     <li><a href="#">Blog</a>
                         <ul>
-                            <li><a href="blog.html">Blog Masonry</a></li>
-                            <li><a href="blog-single.html">Post Single</a></li>
+                            <li><a href="blog.php">Blog Masonry</a></li>
+                            <li><a href="blog-single.php">Post Single</a></li>
                         </ul>
                     </li>
                     <li><a href="#">Pages</a>
                         <ul>
-                            <li><a href="our-team.html">Our Team</a></li>
-                            <li><a href="archives.html">Archives</a></li>
-                            <li><a href="grids.html">Columns</a></li>
-                            <li><a href="404.html">404 Page</a></li>
+                            <li><a href="our-team.php">Our Team</a></li>
+                            <li><a href="archives.php">Archives</a></li>
+                            <li><a href="grids.php">Columns</a></li>
+                            <li><a href="404.php">404 Page</a></li>
                         </ul>
                     </li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="contact.php">Contact</a></li>
                 </ul>
             </div>
         </header> <!-- /.site-header -->
@@ -127,18 +127,71 @@
             <div class="inner-container container">
                 <div class="row">
                     <div class="section-header col-md-12">
-                        <h2>404 - Page Not Found !</h2>
+                        <h2>Archives</h2>
+                        <span>Subtitle Goes Here</span>
                     </div> <!-- /.section-header -->
                 </div> <!-- /.row -->
                 <div class="row">
                     <div class="col-md-12">
                         <div class="box-content">
-                            <div class="text-center error-page">
-                                <h1>404</h1>
-                                <span>Page cannot be found in this website.</span>
-                                <p>Please try Navigation or Search to find what you are looking for!</p>
-                                <p><a href="index.html">&larr; Go back Home</a></p>
-                            </div> <!-- /.text-center -->
+                            <p><a href="http://www.templatemo.com/preview/templatemo_423_artcore">Artcore</a> is free HTML5 template by <b class="blue">template</b><b class="green">mo</b>. Credit goes to <a rel="nofollow" href="http://unsplash.com">Unsplash</a> for photos used in this template. Asperiores, aliquam, provident, amet dolores facilis similique in dolorum cupiditate quam fugit alias consectetur doloribus ducimus nostrum explicabo. Molestias, nam, minus distinctio vel veritatis at non exercitationem omnis.</p>
+                            <div class="archive-box">
+                                <h2 class="archive-heading">Last 7 Posts</h2>
+                                <ul class="archive-list">
+                                    <li>
+                                        <h3><a href="blog-single.php">Markup: HTML Tags and Formatting</a></h3>
+                                    </li>
+                                    <li>
+                                        <h3><a href="blog-single.php">The day we won our first award</a></h3>
+                                    </li>
+                                    <li>
+                                        <h3><a href="blog-single.php">Why working from home can be bad</a></h3>
+                                    </li>
+                                    <li>
+                                        <h3><a href="blog-single.php">An Awesome post title should go here</a></h3>
+                                    </li>
+                                    <li>
+                                        <h3><a href="blog-single.php">Computer Artcore and how they work</a></h3>
+                                    </li>
+                                    <li>
+                                        <h3><a href="blog-single.php">A photography workshop</a></h3>
+                                    </li>
+                                    <li>
+                                        <h3><a href="blog-single.php">An Awesome day into the wild</a></h3>
+                                    </li>
+                                </ul>
+                            </div> <!-- /.archive-box -->
+                            <div class="archive-box">
+                                <h2 class="archive-heading">Archives by Month</h2>
+                                <ul class="archive-list">
+                                    <li>
+                                        <h3><a href="#">April 2014</a></h3>
+                                    </li>
+                                    <li>
+                                        <h3><a href="#">March 2014</a></h3>
+                                    </li>
+                                    <li>
+                                        <h3><a href="#">February 2014</a></h3>
+                                    </li>
+                                    <li>
+                                        <h3><a href="#">January 2014</a></h3>
+                                    </li>
+                                </ul>
+                            </div> <!-- /.archive-box -->
+                            <div class="archive-box last">
+                                <h2 class="archive-heading">Archives by Category</h2>
+                                <ul class="archive-list">
+                                    <li>
+                                        <h3><a href="#">Awesomeness</a></h3>
+                                    </li>
+                                    <li>
+                                        <h3><a href="#">Uncategorized</a></h3>
+                                    </li>
+                                    <li>
+                                        <h3><a href="#">Experience</a></h3>
+                                    </li>
+                                </ul>
+                            </div> <!-- /.archive-box -->
                         </div> <!-- /.box-content -->
                     </div> <!-- /.col-md-12 -->
                 </div> <!-- /.row -->

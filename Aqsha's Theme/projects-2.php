@@ -34,7 +34,7 @@
         <header class="site-header container-fluid">
             <div class="top-header">
                 <div class="logo col-md-6 col-sm-6">
-                    <h1><a href="index.html"><em>Art</em>Core</a></h1>
+                    <h1><a href="blog.php"><em>Art</em>Core</a></h1>
                     <span>Responsive HTML5 Template</span>
                 </div> <!-- /.logo -->
                 <div class="social-top col-md-6 col-sm-6">
@@ -65,60 +65,60 @@
                     <div class="menu-wrapper col-md-9 col-sm-6 col-xs-4">
                         <a href="#" class="toggle-menu visible-sm visible-xs"><i class="fa fa-bars"></i></a>
                         <ul class="sf-menu hidden-xs hidden-sm">
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="services.html">Services</a></li>
+                            <li><a href="blog.php">Home</a></li>
+                            <li><a href="services.php">Services</a></li>
                             <li class="active"><a href="#">Projects</a>
                                 <ul>
-                                    <li><a href="projects-2.html">Two Columns</a></li>
-                                    <li><a href="projects-3.html">Three Columns</a></li>
-                                    <li><a href="project-details.html">Project Single</a></li>
+                                    <li><a href="projects-2.php">Two Columns</a></li>
+                                    <li><a href="projects-3.php">Three Columns</a></li>
+                                    <li><a href="project-details.php">Project Single</a></li>
                                 </ul>
                             </li>
                             <li><a href="#">Blog</a>
                                 <ul>
-                                    <li><a href="blog.html">Blog Masonry</a></li>
-                                    <li><a href="blog-single.html">Post Single</a></li>
+                                    <li><a href="blog.php">Blog Masonry</a></li>
+                                    <li><a href="blog-single.php">Post Single</a></li>
                                 </ul>
                             </li>
                             <li><a href="#">Pages</a>
                                 <ul>
-                                    <li><a href="our-team.html">Our Team</a></li>
-                                    <li><a href="archives.html">Archives</a></li>
-                                    <li><a href="grids.html">Columns</a></li>
-                                    <li><a href="404.html">404 Page</a></li>
+                                    <li><a href="our-team.php">Our Team</a></li>
+                                    <li><a href="archives.php">Archives</a></li>
+                                    <li><a href="grids.php">Columns</a></li>
+                                    <li><a href="404.php">404 Page</a></li>
                                 </ul>
                             </li>
-                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="contact.php">Contact</a></li>
                         </ul>
                     </div> <!-- /.menu-wrapper -->
                 </div> <!-- /.row -->
             </div> <!-- /.main-header -->
             <div id="responsive-menu">
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="services.html">Services</a></li>
+                    <li><a href="blog.php">Home</a></li>
+                    <li><a href="services.php">Services</a></li>
                     <li><a href="#">Projects</a>
                         <ul>
-                            <li><a href="projects-2.html">Two Columns</a></li>
-                            <li><a href="projects-3.html">Three Columns</a></li>
-                            <li><a href="project-details.html">Project Single</a></li>
+                            <li><a href="projects-2.php">Two Columns</a></li>
+                            <li><a href="projects-3.php">Three Columns</a></li>
+                            <li><a href="project-details.php">Project Single</a></li>
                         </ul>
                     </li>
                     <li><a href="#">Blog</a>
                         <ul>
-                            <li><a href="blog.html">Blog Masonry</a></li>
-                            <li><a href="blog-single.html">Post Single</a></li>
+                            <li><a href="blog.php">Blog Masonry</a></li>
+                            <li><a href="blog-single.php">Post Single</a></li>
                         </ul>
                     </li>
                     <li><a href="#">Pages</a>
                         <ul>
-                            <li><a href="our-team.html">Our Team</a></li>
-                            <li><a href="archives.html">Archives</a></li>
-                            <li><a href="grids.html">Columns</a></li>
-                            <li><a href="404.html">404 Page</a></li>
+                            <li><a href="our-team.php">Our Team</a></li>
+                            <li><a href="archives.php">Archives</a></li>
+                            <li><a href="grids.php">Columns</a></li>
+                            <li><a href="404.php">404 Page</a></li>
                         </ul>
                     </li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="contact.php">Contact</a></li>
                 </ul>
             </div>
         </header> <!-- /.site-header -->
@@ -153,7 +153,7 @@
                                     </div>
                                 </div>
                                 <div class="box-content project-detail">
-                                    <h2><a href="project-details.html">Lampyridae Lamps by Monica Correia</a></h2>
+                                    <h2><a href="project-details.php">Lampyridae Lamps by Monica Correia</a></h2>
                                     <p><a href="http://www.templatemo.com/preview/templatemo_423_artcore">Artcore</a> is free HTML5 bootstrap template by <b class="blue">template</b><b class="green">mo</b>. Credit goes to <a rel="nofollow" href="http://unsplash.com">Unsplash</a> for images.</p>
                                 </div>
                             </div> <!-- /.project-item -->
@@ -167,7 +167,7 @@
                                     </div>
                                 </div>
                                 <div class="box-content project-detail">
-                                    <h2><a href="project-details.html">Instant Domestic Enclosure</a></h2>
+                                    <h2><a href="project-details.php">Instant Domestic Enclosure</a></h2>
                                     <p>Nullam a vehicula tellus. Integer sodales ante eu feugiat. Sed fermentum diam dui, id faucibus quam vehicula at.</p>
                                 </div>
                             </div> <!-- /.project-item -->
@@ -181,7 +181,7 @@
                                     </div>
                                 </div>
                                 <div class="box-content project-detail">
-                                    <h2><a href="project-details.html">Ganado & Associates offices</a></h2>
+                                    <h2><a href="project-details.php">Ganado & Associates offices</a></h2>
                                     <p>Nullam a vehicula tellus. Integer sodales ante eu feugiat. Sed fermentum diam dui, id faucibus quam vehicula at.</p>
                                 </div>
                             </div> <!-- /.project-item -->
@@ -195,7 +195,7 @@
                                     </div>
                                 </div>
                                 <div class="box-content project-detail">
-                                    <h2><a href="project-details.html">St Barbara Bastion</a></h2>
+                                    <h2><a href="project-details.php">St Barbara Bastion</a></h2>
                                     <p>Nullam a vehicula tellus. Integer sodales ante eu feugiat. Sed fermentum diam dui, id faucibus quam vehicula at.</p>
                                 </div>
                             </div> <!-- /.project-item -->
@@ -209,7 +209,7 @@
                                     </div>
                                 </div>
                                 <div class="box-content project-detail">
-                                    <h2><a href="project-details.html">Drawing Out Collapse</a></h2>
+                                    <h2><a href="project-details.php">Drawing Out Collapse</a></h2>
                                     <p>Nullam a vehicula tellus. Integer sodales ante eu feugiat. Sed fermentum diam dui, id faucibus quam vehicula at.</p>
                                 </div>
                             </div> <!-- /.project-item -->
@@ -223,7 +223,7 @@
                                     </div>
                                 </div>
                                 <div class="box-content project-detail">
-                                    <h2><a href="project-details.html">St Ursula Street Apartment</a></h2>
+                                    <h2><a href="project-details.php">St Ursula Street Apartment</a></h2>
                                     <p>Nullam a vehicula tellus. Integer sodales ante eu feugiat. Sed fermentum diam dui, id faucibus quam vehicula at.</p>
                                 </div>
                             </div> <!-- /.project-item -->

@@ -34,7 +34,7 @@
         <header class="site-header container-fluid">
             <div class="top-header">
                 <div class="logo col-md-6 col-sm-6">
-                    <h1><a href="index.html"><em>GalleryOf</em>ThePeople</a></h1>
+                    <h1><a href="blog.php"><em>GalleryOf</em>ThePeople</a></h1>
                     <span>Responsive HTML5 Template</span>
                 </div> <!-- /.logo -->
                 <div class="social-top col-md-6 col-sm-6">
@@ -61,94 +61,93 @@
                                 </form>
                             </div>
                         </div><!-- #search-overlay -->
-                    </div> <!-- /.main-header-left -->
+                        </div> <!-- /.main-header-left -->
                     <div class="menu-wrapper col-md-9 col-sm-6 col-xs-4">
                         <a href="#" class="toggle-menu visible-sm visible-xs"><i class="fa fa-bars"></i></a>
                         <ul class="sf-menu hidden-xs hidden-sm">
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="services.html">Services</a></li>
-                            <li><a href="#">Artwork</a>
+                            <li><a href="blog.php">Home</a></li>
+                            <li class="active"><a href="#">Artwork</a>
                                 <ul>
-                                    <li><a href="subblog.html">Paintings</a></li>
-                                    <li><a href="subblog.html">Sculptures</a></li>
-                                    <li><a href="subblog.html">Photography</a></li>
+                                    <li><a href="subblog.php?category=paintings">Physical Art</a></li>
+                                    <li><a href="subblog.php?category=sculptures">Sculptures</a></li>
+                                    <li><a href="subblog.php?category=photography">Photography</a></li>
                                     <!-- ADDED ANOTHER LIST START-->
-                                    <li><a href="subblog.html">Digital Art</a></li>
+                                    <li><a href="subblog.php?category=digital">Digital Art</a></li>
                                     <!-- ADDED ANOTHER LIST START-->
                                 </ul>
                             </li>
-                            <li class="active"><a href="#">Blog</a>
+                            <li><a href="#">About Us</a>
                                 <ul>
-                                    <li><a href="blog.html">Blog Masonry</a></li>
-                                    <li><a href="blog-single.html">Post Single</a></li>
+                                    <li><a href="blog.php">Who We Are</a></li>
+                                    <li><a href="blog-single.php">Purpose</a></li>
                                 </ul>
                             </li>
-                            <li><a href="#">Pages</a>
-                                <ul>
-                                    <li><a href="our-team.html">Our Team</a></li>
-                                    <li><a href="archives.html">Archives</a></li>
-                                    <li><a href="grids.html">Columns</a></li>
-                                    <li><a href="404.html">404 Page</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="contact.html">About Us</a></li>
+                            <li><a href="contact.php">Contact</a></li>
                         </ul>
                     </div> <!-- /.menu-wrapper -->
                 </div> <!-- /.row -->
             </div> <!-- /.main-header -->
             <div id="responsive-menu">
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="services.html">Services</a></li>
+                    <li><a href="blog.php">Home</a></li>
+                    <li><a href="services.php">Services</a></li>
                     <li><a href="#">Projects</a>
                         <ul>
-                            <li><a href="projects-2.html">Two Columns</a></li>
-                            <li><a href="projects-3.html">Three Columns</a></li>
-                            <li><a href="project-details.html">Project Single</a></li>
+                            <li><a href="projects-2.php">Two Columns</a></li>
+                            <li><a href="projects-3.php">Three Columns</a></li>
+                            <li><a href="project-details.php">Project Single</a></li>
                         </ul>
                     </li>
                     <li><a href="#">Blog</a>
                         <ul>
-                            <li><a href="blog.html">Blog Masonry</a></li>
-                            <li><a href="blog-single.html">Post Single</a></li>
+                            <li><a href="blog.php">Blog Masonry</a></li>
+                            <li><a href="blog-single.php">Post Single</a></li>
                         </ul>
                     </li>
                     <li><a href="#">Pages</a>
                         <ul>
-                            <li><a href="our-team.html">Our Team</a></li>
-                            <li><a href="archives.html">Archives</a></li>
-                            <li><a href="grids.html">Columns</a></li>
-                            <li><a href="404.html">404 Page</a></li>
+                            <li><a href="our-team.php">Our Team</a></li>
+                            <li><a href="archives.php">Archives</a></li>
+                            <li><a href="grids.php">Columns</a></li>
+                            <li><a href="404.php">404 Page</a></li>
                         </ul>
                     </li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="contact.php">Contact</a></li>
                 </ul>
             </div>
         </header> <!-- /.site-header -->
+        <?php
+            $category = $_GET["category"];
+            $index = $_GET["index"];
+            include "db/connect.php";
 
+            $result = $db->query("select * from $category where ID=$index");
+            $row = $result -> fetch_row();
+
+            $result = $db->query("select * from users where ID=$row[5]");
+            $user = $result -> fetch_row();
+        ?>
         <div class="content-wrapper">
             <div class="inner-container container">
                 <div class="row">
                     <div class="section-header col-md-12">
-                        <h2>Blog Single</h2>
-                        <span>Subtitle Goes Here</span>
+                        <h2><?=ucfirst($category)?></h2>
                     </div> <!-- /.section-header -->
                 </div> <!-- /.row -->
                 <div class="row">
                     <div class="blog-image col-md-12">
-                        <img src="temp1.png" alt="Blog 1">
+                        <img src="<?=$row[4]?>" alt="">
                     </div> <!-- /.blog-image -->
                     <div class="blog-info col-md-12">
                         <div class="box-content">
-                            <h2 class="blog-title">Keep Your Stuff Alive And Apply it On Life</h2>
-                            <span class="blog-meta">4 November 2084 by Christina with 3 comments</span>
-                            <p><a href="http://www.templatemo.com/preview/templatemo_423_artcore">Artcore</a> is free HTML5 bootstrap template by <b class="blue">template</b><b class="green">mo</b>. Credit goes to <a rel="nofollow" href="http://unsplash.com">Unsplash</a> for images. Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, blanditiis, esse nemo architecto veniam ipsam et in odit unde cumque. Quidem, sapiente, deserunt accusantium iure minus numquam velit beatae iste corrupti alias atque quisquam praesentium est autem voluptatibus? Magnam, repellendus id quidem reprehenderit eligendi. Voluptas, fugiat cumque earum similique suscipit at labore aut hic voluptatum deserunt aliquid dignissimos corporis facilis in provident atque nihil.</p>
+                            <h2 class="blog-title"><?=$row[1]?></h2>
+                            <span class="blog-meta"><?="Uploaded: ".$row[2]?></span>
+                            <p><?="Artwork By: ".$user[3]?></p>
                             
                                 <blockquote>
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam, cum, cumque, mollitia quidem officiis consectetur possimus ut voluptatum eum sit saepe vel nostrum a ad suscipit laborum exercitationem. Rerum, nam.
+                                    <?=$row[6];?>
                                 </blockquote>
                             
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam, maxime, itaque, ut, eligendi consequuntur quasi placeat molestiae nam sunt amet ab officia voluptates dolore error repudiandae fugit aperiam quas facilis? Ipsa, perspiciatis, nam, modi ducimus esse assumenda aut quaerat commodi natus dolorem quo accusantium saepe officiis quasi porro. Possimus, asperiores, nihil, vitae, cumque aperiam perspiciatis velit sit aliquid consectetur neque quidem dolore voluptatem rerum omnis totam impedit sequi eius explicabo culpa facilis. <br><br>Debitis, totam dignissimos fugiat voluptatem esse optio unde alias nulla fuga facere cumque assumenda quod at reiciendis veniam maiores suscipit aperiam mollitia nisi dolorum molestiae omnis natus neque autem minus dicta magnam nobis ipsa ratione recusandae numquam modi asperiores adipisci repudiandae quis beatae placeat ullam atque pariatur expedita.</p>
                         </div>
                     </div> <!-- /.blog-info -->
                     <div class="blog-tags col-md-12">

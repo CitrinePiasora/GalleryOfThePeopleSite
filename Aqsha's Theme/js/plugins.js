@@ -4,7 +4,7 @@
  *
  * Dual licensed under the MIT and GPL licenses:
  *  http://www.opensource.org/licenses/mit-license.php
- *  http://www.gnu.org/licenses/gpl.html
+ *  http://www.gnu.org/licenses/gpl.php
  */
 
 (function ($) {
@@ -595,7 +595,7 @@ var Swiper = function (selector, params) {
             _this.wrapper.removeChild(el);
             _this.reInit();
         };
-        el.html = function (html) {
+        el.php = function (html) {
             if (typeof html === 'undefined') {
                 return el.innerHTML;
             }
@@ -4921,7 +4921,7 @@ if (typeof define === 'function' && define.amd) {
         if(!config.origSort.length){
             $sortWrapper.find(config.targetSelector+':visible').each(function(){
                 $(this).wrap('<s/>');
-                config.origSort.push($(this).parent().html().replace(/\s+/g, ''));
+                config.origSort.push($(this).parent().php().replace(/\s+/g, ''));
                 $(this).unwrap();
             });
         };
@@ -4978,7 +4978,7 @@ if (typeof define === 'function' && define.amd) {
                 $t.attr('data-checksum','1');
             };
             $t.wrap('<s/>');
-            config.checkSort.push($t.parent().html().replace(/\s+/g, ''));
+            config.checkSort.push($t.parent().php().replace(/\s+/g, ''));
             $t.unwrap();
         });
         
@@ -5085,7 +5085,7 @@ if (typeof define === 'function' && define.amd) {
  * http://isotope.metafizzy.co
  *
  * Commercial use requires one-time purchase of a commercial license
- * http://isotope.metafizzy.co/docs/license.html
+ * http://isotope.metafizzy.co/docs/license.php
  *
  * Non-commercial use is licensed under the MIT License
  *
@@ -5415,7 +5415,7 @@ if (typeof define === 'function' && define.amd) {
                     }
 
                     // Split url into two pieces with source url and content selector, e.g,
-                    // "/mypage.html #my_id" will load "/mypage.html" and display element having id "my_id"
+                    // "/mypage.php #my_id" will load "/mypage.php" and display element having id "my_id"
                     if (type === 'ajax') {
                         hrefParts = href.split(/\s+/, 2);
                         href      = hrefParts.shift();
@@ -6205,7 +6205,7 @@ if (typeof define === 'function' && define.amd) {
                 case 'ajax':
                 case 'html':
                     if (current.selector) {
-                        content = $('<div>').html(content).find(current.selector);
+                        content = $('<div>').php(content).find(current.selector);
 
                     } else if (isQuery(content)) {
                         if (!content.data(placeholder)) {
