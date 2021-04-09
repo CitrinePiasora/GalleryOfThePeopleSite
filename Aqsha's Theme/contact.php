@@ -35,7 +35,6 @@
             <div class="top-header">
                 <div class="logo col-md-6 col-sm-6">
                     <h1><a href="blog.php"><em>GalleryOf</em>ThePeople</a></h1>
-                    <span>Responsive HTML5 Template</span>
                 </div> <!-- /.logo -->
                 <div class="social-top col-md-6 col-sm-6">
                     <ul>
@@ -66,7 +65,6 @@
                         <a href="#" class="toggle-menu visible-sm visible-xs"><i class="fa fa-bars"></i></a>
                         <ul class="sf-menu hidden-xs hidden-sm">
                             <li><a href="blog.php">Home</a></li>
-                            <li><a href="services.php">Services</a></li>
                             <li><a href="#">Artworks</a><!-- changed Projects to Artworks-->
                                 <ul>
                                     <li><a href="projects-2.php">Paintings</a></li>
@@ -75,12 +73,6 @@
                                     <!-- ADDED ANOTHER LIST   START-->
                                     <li><a href="project-details.php">Digital Art</a></li>
                                     <!-- ADDED ANOTHER LIST   START-->
-                                </ul>
-                            </li>
-                            <li><a href="#">Blog</a>
-                                <ul>
-                                    <li><a href="blog.php">Blog Masonry</a></li>
-                                    <li><a href="blog-single.php">Post Single</a></li>
                                 </ul>
                             </li>
                             <li><a href="#">Pages</a>
@@ -130,15 +122,14 @@
             <div class="inner-container container">
                 <div class="row">
                     <div class="section-header col-md-12">
-                        <h2>Contact Page</h2>
-                        <span>Subtitle Goes Here</span>
+                        <h2>Contact Us</h2>
                     </div> <!-- /.section-header -->
                 </div> <!-- /.row -->
                 <div class="contact-form">
                     <div class="box-content col-md-12">
                         <div class="row">
                             <div class="col-md-7">
-                                <p>This is an example of a contact page. You can set the contact page in your themes backend and add, remove and modify the input fields, text areas, dropdowns and checkboxes from your backend as well.</p>
+                                <p>For further inquiries, you can send an email below.</p>
                                 <h3 class="contact-title">Send Us Email</h3>
                                 <div class="contact-form-inner">
                                     <form method="post" action="#" name="contactform" id="contactform">
@@ -180,16 +171,15 @@
         <div class="row">
             <div class="section-header col-md-12">
                 <h2>Our Team</h2>
-                <span>Subtitle Goes Here</span>
             </div> <!-- /.section-header -->
         </div> <!-- /.row -->
         <div class="our-team row">
             <div class="team-member col-md-6 col-sm-6">
                 <img src="images/team/member2.jpg" alt="">
                 <div class="box-content">
-                    <h4 class="member-name">Richard Meier</h4>
-                    <span>Co-Founder / Architect</span>
-                    <p>Artcore is free HTML5 responsive template by <b class="blue">template</b><b class="green">mo</b>. Credit goes to <a rel="nofollow" href="http://unsplash.com">Unsplash</a> for photos used in this template.</p>
+                    <h4 class="member-name">Kiagus Aqsha</h4>
+                    <span>Ideator</span>
+                    <p>Front-end.</p>
                     <ul class="social-network">
                         <li><a href="#" class="fa fa-facebook"></a></li>
                         <li><a href="#" class="fa fa-twitter"></a></li>
@@ -201,9 +191,9 @@
             <div class="team-member col-md-6 col-sm-6">
                 <img src="images/team/member1.jpg" alt="">
                 <div class="box-content">
-                    <h4 class="member-name">Frank Gehry</h4>
-                    <span>Modern Architect</span>
-                    <p>Eveniet quia molestiae autem distinctio porro illo dicta nisi pariatur officiis facilis amet! Beatae magni dolore obcaecati.</p>
+                    <h4 class="member-name">George Owen</h4>
+                    <span>Coder</span>
+                    <p>Back-end.</p>
                     <ul class="social-network">
                         <li><a href="#" class="fa fa-facebook"></a></li>
                         <li><a href="#" class="fa fa-twitter"></a></li>
@@ -216,9 +206,9 @@
             <div class="team-member col-md-6 col-sm-6">
                 <img src="images/team/member1.jpg" alt="">
                 <div class="box-content">
-                    <h4 class="member-name">Frank Gehry</h4>
-                    <span>Modern Architect</span>
-                    <p>Eveniet quia molestiae autem distinctio porro illo dicta nisi pariatur officiis facilis amet! Beatae magni dolore obcaecati.</p>
+                    <h4 class="member-name">Stanly</h4>
+                    <span>Coder</span>
+                    <p>Back-end.</p>
                     <ul class="social-network">
                         <li><a href="#" class="fa fa-facebook"></a></li>
                         <li><a href="#" class="fa fa-twitter"></a></li>
