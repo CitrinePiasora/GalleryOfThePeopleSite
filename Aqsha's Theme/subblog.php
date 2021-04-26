@@ -139,7 +139,7 @@
                                 <img src="<?=$row[4]?>" alt="">
                                 <div class="overlay-b">
                                     <div class="overlay-inner">
-                                        <a href="blog-single.php?category=".$category."&index=<?=$row[0]?>" class="fa fa-link"></a>
+                                        <a href="blog-single.php?category=<?php echo $category;?>&index=<?=$row[0]?>" class="fa fa-link"></a>
                                     </div>
                                 </div>
                             </div>
