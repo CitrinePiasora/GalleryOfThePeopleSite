@@ -5,7 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
     <head>
         <meta charset="utf-8">
-        <title>Artcore - Our Team</title>
+        <title>GOTP - The Team</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
 
@@ -35,7 +35,6 @@
             <div class="top-header">
                 <div class="logo col-md-6 col-sm-6">
                     <h1><a href="blog.php"><em>Art</em>Core</a></h1>
-                    <span>Responsive HTML5 Template</span>
                 </div> <!-- /.logo -->
                 <div class="social-top col-md-6 col-sm-6">
                     <ul>
@@ -137,7 +136,6 @@
                         <div class="box-content">
                             <h4 class="member-name">Richard Meier</h4>
                             <span>Co-Founder / Architect</span>
-                            <p>Artcore is free HTML5 responsive template by <b class="blue">template</b><b class="green">mo</b>. Credit goes to <a rel="nofollow" href="http://unsplash.com">Unsplash</a> for photos used in this template.</p>
                             <ul class="social-network">
                                 <li><a href="#" class="fa fa-facebook"></a></li>
                                 <li><a href="#" class="fa fa-twitter"></a></li>

@@ -5,7 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
     <head>
         <meta charset="utf-8">
-        <title>Artcore - 404 Error Page</title>
+        <title>Gallery - 404!</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
 
@@ -35,7 +35,6 @@
             <div class="top-header">
                 <div class="logo col-md-6 col-sm-6">
                     <h1><a href="blog.php"><em>Art</em>Core</a></h1>
-                    <span>Responsive HTML5 Template</span>
                 </div> <!-- /.logo -->
                 <div class="social-top col-md-6 col-sm-6">
                     <ul>
