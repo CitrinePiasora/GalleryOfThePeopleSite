@@ -62,10 +62,10 @@
                     </div> <!-- /.post-masonry -->
                     <div class="post-masonry col-md-4 col-sm-6">
                         <div class="blog-thumb">
-                            <img src="{{url('public/Image/cover/photography.jpg')}}" alt="">
+                            <img src="{{url('public/Image/cover/photographies.jpg')}}" alt="">
                             <div class="overlay-b">
                                 <div class="overlay-inner">
-                                    <a href="subblog.php?category=photography" class="fa fa-link"></a>
+                                    <a href="subblog.blade.php?category=photographies" class="fa fa-link"></a>
                                 </div>
                             </div>
                         </div>
