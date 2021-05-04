@@ -16,3 +16,19 @@ use Illuminate\Support\Facades\Route;
 Route::get('/home', function () {
     return view('main');
 });
+
+Route::post('/gallery/{category}', 'galleryController@post');
+
+Route::get('/welcome', function () {
+    return view('auth.login');
+});
+
+Route::get('/upload', function () {
+    return view('submit');
+});
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

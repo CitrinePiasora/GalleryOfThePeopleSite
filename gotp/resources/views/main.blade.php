@@ -62,16 +62,16 @@
                     </div> <!-- /.post-masonry -->
                     <div class="post-masonry col-md-4 col-sm-6">
                         <div class="blog-thumb">
-                            <img src="{{url('public/Image/cover/photographies.jpg')}}" alt="">
+                            <img src="{{url('public/Image/cover/photography.jpg')}}" alt="">
                             <div class="overlay-b">
                                 <div class="overlay-inner">
-                                    <a href="subblog.blade.php?category=photographies" class="fa fa-link"></a>
+                                    <a href="gallery/photographies" class="fa fa-link"></a>
                                 </div>
                             </div>
                         </div>
                         <div class="blog-body">
                             <div class="box-content">
-                                <h3 class="post-title"><a href="subblog.php?category=photography">Photography</a></h3>
+                                <h3 class="post-title"><a href="gallery/photographies">Photography</a></h3>
                             </div>
                         </div> 
                     </div> <!-- /.post-masonry -->
