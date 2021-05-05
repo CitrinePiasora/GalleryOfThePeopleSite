@@ -65,7 +65,7 @@
                             <img src="{{url('public/Image/cover/photography.jpg')}}" alt="">
                             <div class="overlay-b">
                                 <div class="overlay-inner">
-                                    <a href="gallery/photographies" class="fa fa-link"></a>
+                                    <a href="/gallery/photographies" class="fa fa-link"></a>
                                 </div>
                             </div>
                         </div>

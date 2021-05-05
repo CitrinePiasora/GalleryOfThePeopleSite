@@ -17,24 +17,30 @@
                         <div class="row">
                             <div class="col-md-7">
                                 <div class="contact-form-inner">
-                                    <form method="post" action="#" name="contactform" id="contactform">
-                                        <p>
-                                            <label for="name">Project Name:</label>
-                                            <input name="name" type="text" id="name">
-                                        </p>
-                                        <p>
-                                            <label for="email">Project File:</label>
-                                            <input name="email" type="file" id="email"> 
-                                        </p>
-										<p>
-                                            <label for="name">Copyright/Origin:</label>
-                                            <input name="name" type="text" id="name">
-                                        </p>
-										<p>
-                                            <label for="comments">Description:</label>
-                                            <textarea name="comments" id="comments"></textarea>    
-                                        </p>
-                                        <input type="submit" class="mainBtn" id="submit" value="Submit" />
+                                    <form method="post" action="{{route('image')}}" enctype="multipart/form-data">
+                                        @csrf
+                                        <div class="form-group">
+                                            <p>
+                                                <label for="name">Project Name:</label>
+                                                <input name="name" type="text" id="name">
+                                            </p>
+                                            
+                                            <p>
+                                                <label for="image">Image:</label>
+                                                <input name="image[]" type="file" class="form-control-image" id="image" accept="image/*">
+                                            </p>
+
+                                            <p>
+                                                <label for="origin">Copyright/Origin:</label>
+                                                <input name="origin" type="text" id="name">
+                                            </p>
+
+                                            <p>
+                                                <label for="desc">Description:</label>
+                                                <textarea name="desc" id="desc"></textarea>   
+                                            </p>
+                                            <input type="submit" class="mainBtn" id="submit" value="upload" />
+                                        </div>
                                     </form>
                                 </div> <!-- /.contact-form-inner -->
                                 <div id="message"></div>

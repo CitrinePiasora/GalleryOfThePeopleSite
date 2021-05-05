@@ -13,22 +13,18 @@
                 </div> <!-- /.section-header -->
             </div> <!-- /.row -->
             <div class="row">
-                @forelse($images as $image)
+                @foreach($images as $image)
                     <div class="post-masonry col-md-4 col-sm-6">
                         <div class="blog-thumb">
-                            <img src="{{asset($image->image)}}" alt="">
+                            <img src="{{asset($image->path)}}">
                             <div class="overlay-b">
                                 <div class="overlay-inner">
                                     <a href="test" class="fa fa-link"></a>
                                 </div>
                             </div>
                         </div>
-                        <div class="blog-body">
-                            <div class="box-content">
-                            </div>
-                        </div>
                     </div> <!-- /.post-masonry -->
-                @endforelse
+                @endforeach
                 </div> <!-- /.blog-masonry -->
             </div> <!-- /.row -->
         </div> <!-- /.inner-content -->

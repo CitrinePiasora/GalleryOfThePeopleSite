@@ -17,18 +17,17 @@ Route::get('/home', function () {
     return view('main');
 });
 
-Route::post('/gallery/{category}', 'galleryController@post');
+Route::post('/uploadimg', 'uploadController@post')->name('image');
 
 Route::get('/welcome', function () {
     return view('auth.login');
 });
 
+Route::get('/gallery/{id}', ['uses' => 'subgalleryController@showGallery']);
+
 Route::get('/upload', function () {
     return view('submit');
 });
 
-Route::get('/home', 'HomeController@index')->name('home');
-
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
