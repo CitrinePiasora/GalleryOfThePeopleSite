@@ -15,19 +15,19 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/home', function () {
     return view('main');
-});
+})->name('home');
 
 Route::post('/uploadimg', 'uploadController@post')->name('image');
 
 Route::get('/welcome', function () {
     return view('auth.login');
-});
+})->name('login');
 
 Route::get('/gallery/{id}', ['uses' => 'subgalleryController@showGallery']);
 
 Route::get('/upload', function () {
     return view('submit');
-});
+})->name('uploader');
 
 Auth::routes();
 

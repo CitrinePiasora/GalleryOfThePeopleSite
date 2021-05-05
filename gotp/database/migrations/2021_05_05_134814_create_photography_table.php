@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePhotographiesTable extends Migration
+class CreatePhotographyTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,12 +14,11 @@ class CreatePhotographiesTable extends Migration
     public function up()
     {   
         Schema::enableForeignKeyConstraints();
-        Schema::create('photographies', function (Blueprint $table) {
+        Schema::create('photography', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->id();
             $table->string('title', 255);
             $table->string('copyright', 255);
-            $table->string('source', 255)->nullable();
             $table->string('path');
             $table->integer('uploader_id')->unsigned()->nullable();
             $table->string('description', 255)->nullable();
@@ -40,6 +39,6 @@ class CreatePhotographiesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('photographies');
+        Schema::dropIfExists('photography');
     }
 }

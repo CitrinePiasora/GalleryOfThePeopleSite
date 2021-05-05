@@ -1,7 +1,7 @@
 <header class="site-header container-fluid">
     <div class="top-header">
         <div class="logo col-md-6 col-sm-6">
-            <h1><a href="blog.php"><em>GalleryOf</em>ThePeople</a></h1>
+            <h1><a href="{{route('home')}}"><em>GalleryOf</em>ThePeople</a></h1>
         </div> <!-- /.logo -->
         <div class="social-top col-md-6 col-sm-6">
             <ul>
@@ -9,8 +9,12 @@
                 <li><a href="#" class="fa fa-twitter"></a></li>
                 <li><a href="#" class="fa fa-linkedin"></a></li>
                 <li><a href="#" class="fa fa-google-plus"></a></li>
-                <li><a href="#" class="fa fa-flickr"></a></li>
-                <li><a href="#" class="fa fa-rss"></a></li>
+                <li><a href="{{route('login')}}">Login</a></li>
+                <li>
+                    <form action="{{route('uploader')}}">
+                        <input class="mainBtn" type="submit" value="upload"/>
+                    </form>
+                </li>
             </ul>
         </div> <!-- /.social-top -->
     </div> <!-- /.top-header -->
@@ -31,54 +35,24 @@
             <div class="menu-wrapper col-md-9 col-sm-6 col-xs-4">
                 <a href="#" class="toggle-menu visible-sm visible-xs"><i class="fa fa-bars"></i></a>
                 <ul class="sf-menu hidden-xs hidden-sm">
-                    <li class="active"><a href="blog.php">Home</a></li>
-                    <li><a href="#">Artwork</a>
+                    <li class="{{ Request::is('home') ? 'active' : '' }}"><a href="{{route('home')}}">Home</a></li>
+                    <li class="{{ Request::is('gallery/*') ? 'active' : '' }}"><a>Artwork</a>
                         <ul>
-                            <li><a href="subblog.php?category=paintings">Physical Art</a></li>
-                            <li><a href="subblog.php?category=sculptures">Sculptures</a></li>
-                            <li><a href="subblog.php?category=photography">Photography</a></li>
-                            <!-- ADDED ANOTHER LIST START-->
-                            <li><a href="subblog.php?category=digital">Digital Art</a></li>
-                            <!-- ADDED ANOTHER LIST START-->
+                            <li><a href="{{url('gallery/paintings')}}">Physical Art</a></li>
+                            <li><a href="{{url('gallery/sculptures')}}">Sculptures</a></li>
+                            <li><a href="{{url('gallery/photography')}}">Photography</a></li>
+                            <li><a href="{{url('gallery/digital')}}">Digital Art</a></li>
                         </ul>
                     </li>
-                    <li><a href="#">About Us</a>
+                    <li class="{{ Request::is('about/*') ? 'active' : '' }}"><a href="#">About Us</a>
                         <ul>
                             <li><a href="blog.php">Who We Are</a></li>
                             <li><a href="blog-single.php">Purpose</a></li>
                         </ul>
                     </li>
-                    <li><a href="contact.php">Contact</a></li>
+                    <li class="{{ Request::is('contact') ? 'active' : '' }}"><a href="contact.php">Contact</a></li>
                 </ul>
             </div> <!-- /.menu-wrapper -->
         </div> <!-- /.row -->
     </div> <!-- /.main-header -->
-    <div id="responsive-menu">
-        <ul>
-            <li><a href="blog.php">Home</a></li>
-            <li><a href="services.php">Services</a></li>
-            <li><a href="#">Projects</a>
-                <ul>
-                    <li><a href="projects-2.php">Two Columns</a></li>
-                    <li><a href="projects-3.php">Three Columns</a></li>
-                    <li><a href="project-details.php">Project Single</a></li>
-                </ul>
-            </li>
-            <li><a href="#">Blog</a>
-                <ul>
-                    <li><a href="blog.php">Blog Masonry</a></li>
-                    <li><a href="blog-single.php">Post Single</a></li>
-                </ul>
-            </li>
-            <li><a href="#">Pages</a>
-                <ul>
-                    <li><a href="our-team.php">Our Team</a></li>
-                    <li><a href="archives.php">Archives</a></li>
-                    <li><a href="grids.php">Columns</a></li>
-                    <li><a href="404.php">404 Page</a></li>
-                </ul>
-            </li>
-            <li><a href="contact.php">Contact</a></li>
-        </ul>
-    </div>
 </header> <!-- /.site-header -->

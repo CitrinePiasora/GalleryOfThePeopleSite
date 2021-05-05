@@ -26,13 +26,24 @@
                                             </p>
                                             
                                             <p>
+                                                <label for="copyright">Artist:</label>
+                                                <input name="copyright" type="text" id="name">
+                                            </p>
+
+                                            <p>
                                                 <label for="image">Image:</label>
                                                 <input name="image[]" type="file" class="form-control-image" id="image" accept="image/*">
                                             </p>
 
                                             <p>
-                                                <label for="origin">Copyright/Origin:</label>
-                                                <input name="origin" type="text" id="name">
+                                                <label for="category">Category:</label>
+                                                <select name="category" id="category">
+                                                    <option disabled selected value> -- select an option -- </option>
+                                                    <option value="paintings">Physical Art</option>
+                                                    <option value="sculptures">Sculptures</option>
+                                                    <option value="photography">Photography</option>
+                                                    <option value="digital">Digital Art</option>
+                                                </select>
                                             </p>
 
                                             <p>

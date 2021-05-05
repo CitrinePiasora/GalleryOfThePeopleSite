@@ -19,7 +19,6 @@ class CreateSculpturesTable extends Migration
             $table->id();
             $table->string('title', 255);
             $table->string('copyright', 255);
-            $table->string('source', 255)->nullable();
             $table->string('path');
             $table->integer('uploader_id')->unsigned()->nullable();
             $table->string('description', 255)->nullable();

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\photographies;
+use App\photography;
 use App\sculptures;
 use App\paintings;
 use App\digital;
@@ -11,16 +11,16 @@ use App\digital;
 class subgalleryController extends Controller
 {
     public function showGallery($id) {
-        $content = photographies::all();
+        $content = new photography;
 
-        if($id = 'photographies') {
-            $contents = photographies::all();
+        if($id = 'photography') {
+            $contents = new photography;
         } else if($id = 'paintings') {
-            $contents = paintings::all();
+            $contents = new paintings;
         } else if($id = 'digital') {
-            $contents = digital::all();
+            $contents = new digital;
         } else if($id = 'sculptures') {
-            $content = sculptures::all();
+            $content = new sculptures;
         }
 
         return view('subblog')->with('images', $content);        
