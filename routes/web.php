@@ -35,5 +35,7 @@ Route::group(['middleware' => ['prevent-back-history','auth']],function(){
 
 Route::get('/gallery/{id}', ['uses' => 'subgalleryController@showGallery']);
 
+Route::get('/gallery/{db}/{title}/{id}', ['as' => 'entry', 'uses' => 'entryController@showGallery']);
+
 Auth::routes();
 

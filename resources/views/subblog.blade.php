@@ -19,7 +19,7 @@
                             <img src="{{asset($image->path)}}">
                             <div class="overlay-b">
                                 <div class="overlay-inner">
-                                    <a href="test" class="fa fa-link"></a>
+                                    <a href="{{route('entry', [$images->getTable(), $image->title, $image->id])}}" class="fa fa-link"></a>
                                 </div>
                             </div>
                         </div>

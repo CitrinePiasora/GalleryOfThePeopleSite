@@ -11,8 +11,6 @@ use App\digital;
 class subgalleryController extends Controller
 {
     public function showGallery($id) {
-        $contents = new photography;
-
         if($id == 'photography') {
             $contents = new photography;
         } else if($id == 'paintings') {
@@ -20,7 +18,7 @@ class subgalleryController extends Controller
         } else if($id == 'digital') {
             $contents = new digital;
         } else if($id == 'sculptures') {
-            $content = new sculptures;
+            $contents = new sculptures;
         }
 
         return view('subblog')->with('images', $contents);        

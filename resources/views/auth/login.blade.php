@@ -24,22 +24,12 @@
                                         <label for="email">Email</label>
                                         <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
         
-                                        @error('email')
-                                            <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
-                                            </span>
-                                        @enderror
+                                        
                                     </p>
             
                                     <p>
                                         <label for="password">Password</label>
                                         <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
-        
-                                        @error('password')
-                                            <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
-                                            </span>
-                                        @enderror
                                     </p>
 
                                     <p>
@@ -50,6 +40,24 @@
                                         <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>        
                                     </p>
                                     
+                                    <p>
+                                        @error('email')
+                                            <label></label>
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                    </p>
+
+                                    <p>
+                                        @error('password')
+                                            <label></label>
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                    </p>
+
                                     <input class="mainBtn" type="submit" id="submit" value="Login" />
                                     @if (Route::has('password.request'))
                                         <a class="btn btn-link" href="{{ route('password.request') }}">
@@ -58,7 +66,6 @@
                                     @endif
                                 </form>
                             </div> <!-- /.contact-form-inner -->
-                            <div id="message"></div>
                         </div> <!-- /.col-md-7 -->
                     </div> <!-- /.row -->
                 </div> <!-- /.box-content -->
