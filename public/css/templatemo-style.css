@@ -258,6 +258,7 @@ input.mainBtn {
   -moz-transition: all 200ms ease-in-out;
   transition: all 200ms ease-in-out;
 }
+
 input.mainBtn:hover {
   color: #f69730;
   border-color: #f69730;
@@ -1336,6 +1337,7 @@ h2.comment-heading {
 .comment-form input.mainBtn {
   margin-left: 152px;
 }
+
 @media screen and (max-width: 768px) {
   .comment-form label {
     display: block;
@@ -1426,6 +1428,12 @@ ul.archive-list li h3 a:hover {
 .contact-form-inner input {
   width: 40%;
 }
+
+
+.label1 {
+  min-width: 150px;
+}
+
 .contact-form-inner textarea {
   max-width: 64%;
   width: 64%;
@@ -1434,6 +1442,7 @@ ul.archive-list li h3 a:hover {
 .contact-form-inner input.mainBtn {
   margin-left: 152px;
 }
+
 @media screen and (min-width: 769px) and (max-width: 991px) {
   .contact-form-inner {
     margin-bottom: 40px;

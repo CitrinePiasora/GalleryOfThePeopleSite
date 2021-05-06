@@ -41,24 +41,21 @@
                                             </span>
                                         @enderror
                                     </p>
-            
+
                                     <p>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-        
-                                            <label class="form-check-label" for="remember">
-                                                {{ __('Remember Me') }}
-                                            </label>
-                                        </div>
+                                        <label></label>
+                                        <span class="label label1" for="remember">
+                                            Remember Me
+                                        </span>
+                                        <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>        
                                     </p>
-            
-                                        <input type="submit" class="mainBtn" id="submit" value="Login" />
-        
-                                        @if (Route::has('password.request'))
-                                            <a class="btn btn-link" href="{{ route('password.request') }}">
-                                                {{ __('Forgot Your Password?') }}
-                                            </a>
-                                        @endif
+                                    
+                                    <input class="mainBtn" type="submit" id="submit" value="Login" />
+                                    @if (Route::has('password.request'))
+                                        <a class="btn btn-link" href="{{ route('password.request') }}">
+                                            &nbsp;{{ __('Forgot Your Password?') }}
+                                        </a>
+                                    @endif
                                 </form>
                             </div> <!-- /.contact-form-inner -->
                             <div id="message"></div>
