@@ -23,19 +23,15 @@ Route::get('/home', function () {
     return view('main');
 })->name('home');
 
-Route::group(['middleware' => ['prevent-back-history','auth']],function(){
-    Route::get('/welcome', function () {
-        return view('auth.login');
-    })->name('login');
-
-    Route::get('/upload', function () {
-        return view('submit');
-    })->name('uploader');
+Route::get('/login', function () {
+    return view('auth.login');
 });
 
+Route::get('/upload', function () {
+    return view('submit');
+})->name('uploader');
+
 Route::get('/gallery/{id}', ['uses' => 'subgalleryController@showGallery']);
-
-
 
 Auth::routes();
 

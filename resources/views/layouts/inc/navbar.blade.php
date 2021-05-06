@@ -10,14 +10,21 @@
                     <input class="mainBtn" type="submit" value="upload"/>
                 </form>
             @else
-                <form class="form-inline" action="{{route('uploader')}}" id="upload">
-                    <input class="mainBtn" type="submit" value="login" form="login"/>
-                    <input class="mainBtn" type="submit" value="upload"/>
-                </form>
+                @if (Request::is('login'))
+                    <form class="form-inline" action="{{route('uploader')}}" id="upload">
+                        <input class="mainBtn" type="submit" value="need an account?" form="register"/>
+                    </form>
+                @else
+                    <form class="form-inline" action="{{route('uploader')}}" id="upload">
+                        <input class="mainBtn" type="submit" value="login" form="login"/>
+                        <input class="mainBtn" type="submit" value="need an account?" form="register"/>
+                    </form>
+                @endif
             @endif
             
             <form class="form-inline" action="{{route('login')}}" id="login"></form>
             <form class="form-inline" action="{{route('logout') }}" id="logout"></form>
+            <form class="form-inline" action="{{route('register') }}" id="register"></form>
         </div> <!-- /.social-top -->
     </div> <!-- /.top-header -->
     <div class="main-header">
