@@ -11,18 +11,18 @@ use App\digital;
 class subgalleryController extends Controller
 {
     public function showGallery($id) {
-        $content = new photography;
+        $contents = new photography;
 
-        if($id = 'photography') {
+        if($id == 'photography') {
             $contents = new photography;
-        } else if($id = 'paintings') {
+        } else if($id == 'paintings') {
             $contents = new paintings;
-        } else if($id = 'digital') {
+        } else if($id == 'digital') {
             $contents = new digital;
-        } else if($id = 'sculptures') {
+        } else if($id == 'sculptures') {
             $content = new sculptures;
         }
 
-        return view('subblog')->with('images', $content);        
+        return view('subblog')->with('images', $contents);        
     }
 }

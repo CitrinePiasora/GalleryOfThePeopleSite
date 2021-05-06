@@ -13,21 +13,29 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+
+Route::post('/uploadimg', 'uploadController@post')->name('image');
+
+Route::get('logout', 'LogOutController@LogOut')->name('logout');
+
 Route::get('/home', function () {
     return view('main');
 })->name('home');
 
-Route::post('/uploadimg', 'uploadController@post')->name('image');
+Route::group(['middleware' => ['prevent-back-history','auth']],function(){
+    Route::get('/welcome', function () {
+        return view('auth.login');
+    })->name('login');
 
-Route::get('/welcome', function () {
-    return view('auth.login');
-})->name('login');
+    Route::get('/upload', function () {
+        return view('submit');
+    })->name('uploader');
+});
 
 Route::get('/gallery/{id}', ['uses' => 'subgalleryController@showGallery']);
 
-Route::get('/upload', function () {
-    return view('submit');
-})->name('uploader');
+
 
 Auth::routes();
 

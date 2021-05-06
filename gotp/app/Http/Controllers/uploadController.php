@@ -27,15 +27,13 @@ class uploadController extends Controller
         $category = $request->category;
         $copyright = $request->copyright;
         
-        $post = new photography;
-
-        if($category = "photography") {
+        if($category == "photography") {
             $post = new photography;
-        } else if($category = "paintings") {
+        } else if($category == "paintings") {
             $post = new paintings;
-        } else if($category = "digital") {
+        } else if($category == "digital") {
             $post = new digital;
-        } else if($category = "sculptures") {
+        } else if($category == "sculptures") {
             $post = new sculptures;
         }
         

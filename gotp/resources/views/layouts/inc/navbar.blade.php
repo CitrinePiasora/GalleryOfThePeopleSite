@@ -4,18 +4,20 @@
             <h1><a href="{{route('home')}}"><em>GalleryOf</em>ThePeople</a></h1>
         </div> <!-- /.logo -->
         <div class="social-top col-md-6 col-sm-6">
-            <ul>
-                <li><a href="#" class="fa fa-facebook"></a></li>
-                <li><a href="#" class="fa fa-twitter"></a></li>
-                <li><a href="#" class="fa fa-linkedin"></a></li>
-                <li><a href="#" class="fa fa-google-plus"></a></li>
-                <li><a href="{{route('login')}}">Login</a></li>
-                <li>
-                    <form action="{{route('uploader')}}">
-                        <input class="mainBtn" type="submit" value="upload"/>
-                    </form>
-                </li>
-            </ul>
+            @if (Auth::check())
+                <form class="form-inline" action="{{route('uploader')}}" id="upload">
+                    <input class="mainBtn" type="submit" value="logout" form="logout"/>
+                    <input class="mainBtn" type="submit" value="upload"/>
+                </form>
+            @else
+                <form class="form-inline" action="{{route('uploader')}}" id="upload">
+                    <input class="mainBtn" type="submit" value="login" form="login"/>
+                    <input class="mainBtn" type="submit" value="upload"/>
+                </form>
+            @endif
+            
+            <form class="form-inline" action="{{route('login')}}" id="login"></form>
+            <form class="form-inline" action="{{route('logout') }}" id="logout"></form>
         </div> <!-- /.social-top -->
     </div> <!-- /.top-header -->
     <div class="main-header">

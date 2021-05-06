@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class digital extends Model
 {
-    //
+    protected $table = 'digital';
 }
