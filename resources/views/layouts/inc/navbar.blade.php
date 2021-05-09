@@ -59,7 +59,7 @@
                             <li><a href="blog-single.php">Purpose</a></li>
                         </ul>
                     </li>
-                    <li class="{{ Request::is('contact') ? 'active' : '' }}"><a href="contact.php">Contact</a></li>
+                    <li class="{{ Request::is('contact') ? 'active' : '' }}"><a href="{{route('contact')}}">Contact</a></li>
                 </ul>
             </div> <!-- /.menu-wrapper -->
         </div> <!-- /.row -->

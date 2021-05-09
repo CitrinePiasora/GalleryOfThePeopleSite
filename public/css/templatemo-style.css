@@ -1181,6 +1181,7 @@ div.load-more a.load-more:active {
 .post-masonry .blog-thumb img {
   width: 100%;
 }
+
 .post-masonry .blog-thumb:hover .overlay-b {
   opacity: 1;
   visibility: visible;

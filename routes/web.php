@@ -33,9 +33,12 @@ Route::group(['middleware' => ['prevent-back-history','auth']],function(){
     })->name('uploader');
 });
 
-Route::get('/gallery/{id}', ['uses' => 'subgalleryController@showGallery']);
+Route::get('/contact', function () {
+    return view('contact');
+})->name('contact');
+
+Route::get('/gallery/{id}', ['uses' => 'subgalleryController@showGallery'])->name('subgalleries');
 
 Route::get('/gallery/{db}/{title}/{id}', ['as' => 'entry', 'uses' => 'entryController@showGallery']);
 
 Auth::routes();
-

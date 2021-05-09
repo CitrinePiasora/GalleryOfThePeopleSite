@@ -62,49 +62,30 @@
             </div> <!-- /.row -->
             <div class="our-team row">
                 <div class="team-member col-md-6 col-sm-6">
-                    <img src="images/team/member2.jpg" alt="">
+                    <img src="images/team/member2.jpg">
                     <div class="box-content">
-                        <h4 class="member-name">Kiagus Aqsha</h4>
-                        <span>Ideator</span>
-                        <p>Front-end.</p>
-                        <ul class="social-network">
-                            <li><a href="#" class="fa fa-facebook"></a></li>
-                            <li><a href="#" class="fa fa-twitter"></a></li>
-                            <li><a href="#" class="fa fa-dropbox"></a></li>
-                            <li><a href="#" class="fa fa-linkedin"></a></li>
-                        </ul>
+                        <h4 class="member-name">Stanlly</h4>
+                        <span>Lead Programmer, Debugger</span>
+                        <p>Frontend</p>
                     </div>
                 </div> <!-- /.team-member -->
                 <div class="team-member col-md-6 col-sm-6">
-                    <img src="images/team/member1.jpg" alt="">
+                    <img src="images/team/member1.jpg">
                     <div class="box-content">
                         <h4 class="member-name">George Owen</h4>
-                        <span>Coder</span>
-                        <p>Back-end.</p>
-                        <ul class="social-network">
-                            <li><a href="#" class="fa fa-facebook"></a></li>
-                            <li><a href="#" class="fa fa-twitter"></a></li>
-                            <li><a href="#" class="fa fa-dropbox"></a></li>
-                            <li><a href="#" class="fa fa-linkedin"></a></li>
-                        </ul>
+                        <span>Secondary Programmer, Debugger</span>
+                        <p>Backend</p>
                     </div>
                 </div> <!-- /.team-member -->
                 <!-- ADDED TEAM MEMBER   START-->
                 <div class="team-member col-md-6 col-sm-6">
-                    <img src="images/team/member1.jpg" alt="">
+                    <img src="images/team/member1.jpg">
                     <div class="box-content">
-                        <h4 class="member-name">Stanly</h4>
-                        <span>Coder</span>
-                        <p>Back-end.</p>
-                        <ul class="social-network">
-                            <li><a href="#" class="fa fa-facebook"></a></li>
-                            <li><a href="#" class="fa fa-twitter"></a></li>
-                            <li><a href="#" class="fa fa-dropbox"></a></li>
-                            <li><a href="#" class="fa fa-linkedin"></a></li>
-                        </ul>
+                        <h4 class="member-name">Kiagus Aqsha</h4>
+                        <span>Designer</span>
+                        <p>Frontend</p>
                     </div>
                 </div> <!-- /.team-member -->
-                <!--ADDED TEAM MEMBER   END-->
             </div> <!-- /.our-team -->
             <!-- trying to make format good-->
         </div> <!-- /.inner-content -->
