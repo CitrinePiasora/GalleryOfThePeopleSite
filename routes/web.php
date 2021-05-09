@@ -37,6 +37,10 @@ Route::get('/contact', function () {
     return view('contact');
 })->name('contact');
 
+Route::get('/about', function () {
+    return view('our-team');
+})->name('about');
+
 Route::get('/gallery/{id}', ['uses' => 'subgalleryController@showGallery'])->name('subgalleries');
 
 Route::get('/gallery/{db}/{title}/{id}', ['as' => 'entry', 'uses' => 'entryController@showGallery']);

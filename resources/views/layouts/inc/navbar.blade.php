@@ -53,12 +53,7 @@
                             <li><a href="{{url('gallery/digital')}}">Digital Art</a></li>
                         </ul>
                     </li>
-                    <li class="{{ Request::is('about/*') ? 'active' : '' }}"><a href="#">About Us</a>
-                        <ul>
-                            <li><a href="blog.php">Who We Are</a></li>
-                            <li><a href="blog-single.php">Purpose</a></li>
-                        </ul>
-                    </li>
+                    <li class="{{ Request::is('about') ? 'active' : '' }}"><a href="{{route('about')}}">About Us</a></li>  
                     <li class="{{ Request::is('contact') ? 'active' : '' }}"><a href="{{route('contact')}}">Contact</a></li>
                 </ul>
             </div> <!-- /.menu-wrapper -->
