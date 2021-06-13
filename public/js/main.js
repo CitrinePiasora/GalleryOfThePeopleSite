@@ -195,7 +195,7 @@ jQuery(document).ready(function($) {
 
 
     /************** Blog Masonry Isotope *********************/
-        $(window).load(function () {
+        $(window).on('load',  function () {
             blogisotope = function () {
                 var e, t = $(".blog-masonry").width(),
                     n = Math.floor(t);

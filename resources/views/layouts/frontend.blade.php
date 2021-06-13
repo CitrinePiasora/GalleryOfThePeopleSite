@@ -21,6 +21,8 @@
     <link rel="stylesheet" href="{{url('public/css/templatemo-misc.css')}}">
     <link rel="stylesheet" href="{{url('public/css/templatemo-style.css')}}">
     <script src="{{url('public/js/vendor/modernizr-2.6.1-respond-1.1.0.min.js')}}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 <body>
     <!--[if lt IE 7]>
