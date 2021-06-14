@@ -13,7 +13,7 @@
                 </div> <!-- /.section-header -->
             </div> <!-- /.row -->
             <div id="app">
-                <gallery :category="'{{$category}}'"></gallery>
+                <gallery v-bind:category="'{{$category}}'"></gallery>
             </div>
         </div> <!-- /.inner-content -->
     </div> <!-- /.content-wrapper -->

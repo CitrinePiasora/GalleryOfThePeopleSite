@@ -2106,7 +2106,7 @@ __webpack_require__.r(__webpack_exports__);
     }
 
     axios.get(apiLink).then(function (response) {
-      return _this.info = response.data;
+      _this.info = response.data;
     });
   }
 });
@@ -37989,7 +37989,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "row" }, [
     _c("div", { staticClass: "post-masonry col-md-4 col-sm-6" }, [
-      _c("a", [_vm._v(_vm._s(_vm.category))])
+      _c("a", [_vm._v(_vm._s(_vm.info))])
     ])
   ])
 }
@@ -50237,7 +50237,8 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 Vue.component('formdata', __webpack_require__(/*! ./components/formdata.vue */ "./resources/js/components/formdata.vue")["default"]);
-Vue.component('gallery', __webpack_require__(/*! ./components/gallery.vue */ "./resources/js/components/gallery.vue")["default"]);
+Vue.component('gallery', __webpack_require__(/*! ./components/gallery.vue */ "./resources/js/components/gallery.vue")["default"]); //Vue.component('entry', require('./components/entry.vue').default);
+
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
