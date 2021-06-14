@@ -22,7 +22,7 @@ window.Vue = require('vue');
 
 Vue.component('formdata', require('./components/formdata.vue').default);
 Vue.component('gallery', require('./components/gallery.vue').default);
-//Vue.component('entry', require('./components/entry.vue').default);
+Vue.component('entry', require('./components/entry.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

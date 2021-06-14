@@ -13,8 +13,10 @@
                 </div> <!-- /.section-header -->
             </div> <!-- /.row -->
             <div id="app">
-                <entry></entry>
+                <entry v-bind:art="'{{$data['art']}}'" v-bind:category="'{{$data['db']}}'"></entry>
             </div>
         </div> <!-- /.inner-content -->
     </div> <!-- /.content-wrapper -->
+
+    <script src="{{asset('public/js/app.js')}}"></script>
 @endsection

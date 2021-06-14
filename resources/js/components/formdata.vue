@@ -59,6 +59,8 @@
             }
         },
         
+        props: ['userID'],
+
         methods: {
             onSelect() {
                 this.file = this.$refs.file.files[0];
@@ -80,8 +82,7 @@
                 formData.append('copyright', this.artist);
                 formData.append('description', this.description);
                 formData.append('image', this.file);
-                console.log(this.$attrs.userid);
-                formData.append('uploader', this.$attrs.userid);
+                formData.append('uploader', this.userID);
 
                 if(this.category == "digital") {
                     apiLink = "http://localhost:8888/api/digital";
@@ -98,7 +99,7 @@
                     console.log("Response", response.data);
                     window.location.href = 'home';
                 })
-                .catch(function (error) {
+                .catch( function (error) {
                     console.log(error);
                     alert("Please fill in all fields correctly");
                 });

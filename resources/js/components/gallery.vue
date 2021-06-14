@@ -9,7 +9,7 @@
                     </div>
                 </div>
             </div>-->
-            <a>{{info}}</a>
+            <a>{{info[0]['title']}}</a>
         </div> <!-- /.post-masonry -->
     </div> <!-- /.blog-masonry -->
 </template>
@@ -38,7 +38,7 @@
             }
 
             axios.get(apiLink)
-            .then(response => {this.info = response.data});
+                .then(response => {this.info = response.data});
         }
     };
 </script>
