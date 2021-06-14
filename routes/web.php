@@ -23,30 +23,26 @@ use App\sculptures;
 
 Route::get('logout', 'LogOutController@LogOut')->name('logout');
 
-Route::view('/home', 'home');
+Route::view('/home', 'home')->name('home');
 
 Route::get('/contact', function () {
     return view('contact');
 })->name('contact');
 
 Route::get('/gallery/photography', function() {
-    $contents = new photography;
-    return view('subblog')->with('images', $contents);
+    return view('subblog')->with('category', 'photos');
 })->name('photos');
 
 Route::get('/gallery/sculptures', function() {
-    $contents = new sculptures;
-    return view('subblog')->with('images', $contents);
+    return view('subblog')->with('category', 'sculptures');
 })->name('sculps');
 
 Route::get('/gallery/paintings', function() {
-    $contents = new paintings;
-    return view('subblog')->with('images', $contents);
+    return view('subblog')->with('category', 'paintings');
 })->name('paint');
 
 Route::get('/gallery/digital', function() {
-    $contents = new digital;
-    return view('subblog')->with('images', $contents);
+    return view('subblog')->with('category', 'digital art');
 })->name('digital');
 
 Route::group(['middleware' => ['prevent-back-history','auth']],function(){

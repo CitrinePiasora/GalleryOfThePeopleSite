@@ -25,13 +25,24 @@ class PhotoPostsController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'title' => 'required',
-            'copyright' => 'required',
-            'path' => 'required'
-        ]);
+        try{
+            $post = new photography;
 
-        return photography::create($request->all());
+            $file = $request->file('image');
+            $name = time() . $file->getClientOriginalName();
+            $request->file('image')->move(public_path('Image'), $name);
+
+            $post->uploader_id = $request->uploader;
+            $post->title = $request->title;
+            $post->copyright = $request->copyright;
+            $post->description = $request->description;
+            $post->path = 'public/Image/'.$name;
+            $post->save();
+
+            return response()->json(['message' => 'You have successfully uploaded "' . $name . '"'], 200);
+        } catch(\Exception $e) {
+            return response()->json(['message' => $e->getMessage()]);
+        }
     }
 
     /**
@@ -54,16 +65,7 @@ class PhotoPostsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $request->validate([
-            'title' => 'required',
-            'copyright' => 'required',
-            'path' => 'required'
-        ]);
-        
-        $posts = photography::find($id);
-        $posts = $posts->update($request->all());
-
-        return $posts;
+        //
     }
 
     /**
@@ -74,6 +76,6 @@ class PhotoPostsController extends Controller
      */
     public function destroy($id)
     {
-        return photography::destroy($id);
+        //
     }
 }

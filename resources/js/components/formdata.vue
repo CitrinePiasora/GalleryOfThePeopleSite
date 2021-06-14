@@ -7,23 +7,23 @@
                         <form id="app" v-on:submit.prevent="submitData">
                             <div class="form-group">
                                 <p>
-                                    <label for="name">Project Name:</label>
-                                    <input name="name" type="text" id="name" v-model="form.title">
+                                    <label for="name">Project Title:</label>
+                                    <input name="name" type="text" id="name" v-model="title">
                                 </p>
                                 
                                 <p>
                                     <label for="copyright">Artist:</label>
-                                    <input name="copyright" type="text" id="name" v-model="form.copyright">
+                                    <input name="copyright" type="text" id="name" v-model="artist">
                                 </p>
 
                                 <p>
                                     <label for="image">Image:</label>
-                                    <input name="image[]" type="file" class="form-control-image" id="image" accept="image/*" @change="onSelect">
+                                    <input name="image[]" type="file" class="form-control-image" id="image" accept="image/*" v-on:change="onSelect" ref="file">
                                 </p>
 
                                 <p>
                                     <label for="category">Category:</label>
-                                    <select name="category" id="category">
+                                    <select name="category" id="category" v-model="category">
                                         <option disabled selected value> -- select an option -- </option>
                                         <option value="paintings">Physical Art</option>
                                         <option value="sculptures">Sculptures</option>
@@ -34,9 +34,9 @@
 
                                 <p>
                                     <label for="desc">Description:</label>
-                                    <textarea name="desc" id="desc" v-model="form.description"></textarea>   
+                                    <textarea name="desc" id="desc" v-model="description"></textarea>   
                                 </p>
-                                <input type="submit" class="mainBtn" id="submit" value="upload" @change="submitData" />
+                                <input type="submit" class="mainBtn" id="submit" value="upload"/>
                             </div>
                         </form>
                     </div> <!-- /.contact-form-inner -->
@@ -49,41 +49,60 @@
 
 <script>
     export default {
-        name: 'app',
         data () {
             return {
-            form: {
-                    title: "",
-                    artist: "",
-                    body: "",
-                    file: null,
-                    description: ""
-                }
+                title: "",
+                artist: "",
+                file: null,
+                description: "",
+                category: ""
             }
         },
+        
         methods: {
-            onSelect: function () {
-                this.file = event.target.files[0]
+            onSelect() {
+                this.file = this.$refs.file.files[0];
             },
 
-            submitData: function () {
+            submitData: function (e) {
+                e.preventDefault();
 
-                axios.put('http://localhost:8888/api/digital', {
-                    action:'insert',
-                    title: this.title,
-                    copyright: this.artist,
-                    path: 'i want to die',
-                    uploader_id: 1,
-                    description: this.description
-                    })
-                    .then(
-                        alert("Data has been successfully created")
-                        //redirect code to index.html
-                    )
-                    .catch(function (error) {
-                        console.log(error);
-                    })
+                let apiLink = "";
+                const config = {
+                    headers: {
+                        'content-type': 'multipart/form-data',
+                        'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content,
+                    }
+                }
+
+                const formData = new FormData();
+                formData.append('title', this.title);
+                formData.append('copyright', this.artist);
+                formData.append('description', this.description);
+                formData.append('image', this.file);
+                console.log(this.$attrs.userid);
+                formData.append('uploader', this.$attrs.userid);
+
+                if(this.category == "digital") {
+                    apiLink = "http://localhost:8888/api/digital";
+                } else if (this.category == "paintings") {
+                    apiLink = "http://localhost:8888/api/paintings"
+                } else if (this.category == "sculptures") {
+                    apiLink = "http://localhost:8888/api/sculptures";
+                } else if (this.category == "photography") {
+                    apiLink = "http://localhost:8888/api/photos";                    
+                }
+                
+                axios.post(apiLink, formData, config)
+                .then(response => {
+                    console.log("Response", response.data);
+                    window.location.href = 'home';
+                })
+                .catch(function (error) {
+                    console.log(error);
+                    alert("Please fill in all fields correctly");
+                });
             }
         }
-    };
+    }
 </script>
