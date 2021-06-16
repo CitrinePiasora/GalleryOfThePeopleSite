@@ -1978,7 +1978,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -37839,7 +37838,42 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "row" }, [
-    _c("a", [_vm._v(_vm._s(_vm.info))])
+    _c("div", { staticClass: "blog-image col-md-12" }, [
+      _c("img", { attrs: { src: _vm.info.path } })
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "project-infos col-md-12" }, [
+      _c("div", { staticClass: "box-content" }, [
+        _c("h2", { staticClass: "project-title" }, [
+          _vm._v(_vm._s(_vm.info["title"]))
+        ]),
+        _vm._v(" "),
+        _c("blockquote", [
+          _vm._v(
+            "\n                    " +
+              _vm._s(_vm.info["description"]) +
+              "\n                "
+          )
+        ]),
+        _vm._v(" "),
+        _c("ul", { staticClass: "project-meta" }, [
+          _c("li", [
+            _c("i", { staticClass: "fa fa-folder-open" }),
+            _c("a", { attrs: { href: "" } }, [_vm._v(_vm._s(_vm.category))])
+          ]),
+          _vm._v(" "),
+          _c("li", [
+            _c("i", { staticClass: "fa fa-calendar-o" }),
+            _vm._v(_vm._s(_vm.info["created_at"]))
+          ]),
+          _vm._v(" "),
+          _c("li", [
+            _c("i", { staticClass: "fa fa-users" }),
+            _vm._v(_vm._s(_vm.info["copyright"]))
+          ])
+        ])
+      ])
+    ])
   ])
 }
 var staticRenderFns = []
@@ -38079,7 +38113,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "row" }, [
     _c("div", { staticClass: "post-masonry col-md-4 col-sm-6" }, [
-      _c("a", [_vm._v(_vm._s(_vm.info[0]["title"]))])
+      _c("a", [_vm._v(_vm._s(_vm.info[0]["description"]))])
     ])
   ])
 }

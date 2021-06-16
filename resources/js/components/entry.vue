@@ -1,24 +1,23 @@
 <template>
     <div class="row">
-        <!--<div class="blog-image col-md-12">
-            <img src="{{asset($data['image'])}}">
+        <div class="blog-image col-md-12">
+            <img v-bind:src="info.path">
         </div> 
         <div class="project-infos col-md-12">
             <div class="box-content">
-                <h2 class="project-title">{{$data['title']}}</h2>
+                <h2 class="project-title">{{info['title']}}</h2>
                 
                     <blockquote>
-                        {{$data['desc']}}
+                        {{info['description']}}
                     </blockquote>
 
                 <ul class="project-meta">
-                    <li><i class="fa fa-folder-open"></i><a href="{{route('subgalleries', $data['route'])}}">{{$data['db']}}</a></li>
-                    <li><i class="fa fa-calendar-o"></i>{{$data['date']}}</li>
-                    <li><i class="fa fa-users"></i>{{$data['by']}}</li>
+                    <li><i class="fa fa-folder-open"></i><a href="">{{category}}</a></li>
+                    <li><i class="fa fa-calendar-o"></i>{{info['created_at']}}</li>
+                    <li><i class="fa fa-users"></i>{{info['copyright']}}</li>
                 </ul>
             </div> 
-        </div> -->
-        <a>{{info}}</a>
+        </div>
     </div> <!-- /.row -->
 </template>
 

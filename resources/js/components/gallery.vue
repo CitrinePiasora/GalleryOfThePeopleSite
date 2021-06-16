@@ -9,7 +9,7 @@
                     </div>
                 </div>
             </div>-->
-            <a>{{info[0]['title']}}</a>
+            <a>{{info[0]['description']}}</a>
         </div> <!-- /.post-masonry -->
     </div> <!-- /.blog-masonry -->
 </template>
