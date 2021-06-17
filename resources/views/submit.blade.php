@@ -13,7 +13,7 @@
                 </div> <!-- /.section-header -->
             </div> <!-- /.row -->
             <div id="app">
-                <formdata :userID="'{{Auth::user()->id}}'"></formdata>
+                <formdata v-bind:userid="'{{Auth::user()->id}}'"></formdata>
             </div>
         </div> <!-- /.inner-content -->
     </div> <!-- /.content-wrapper -->

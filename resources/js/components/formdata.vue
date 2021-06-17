@@ -59,7 +59,7 @@
             }
         },
         
-        props: ['userID'],
+        props: ['userid'],
 
         methods: {
             onSelect() {
@@ -82,7 +82,7 @@
                 formData.append('copyright', this.artist);
                 formData.append('description', this.description);
                 formData.append('image', this.file);
-                formData.append('uploader', this.userID);
+                formData.append('uploader', this.userid);
 
                 if(this.category == "digital") {
                     apiLink = "http://localhost:8888/api/digital";

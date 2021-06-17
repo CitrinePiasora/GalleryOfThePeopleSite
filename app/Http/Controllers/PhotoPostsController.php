@@ -29,14 +29,14 @@ class PhotoPostsController extends Controller
             $post = new photography;
 
             $file = $request->file('image');
-            $name = time() . $file->getClientOriginalName();
+            $name = time() . str_replace(' ', '', $file->getClientOriginalName());            
             $request->file('image')->move(public_path('Image'), $name);
 
             $post->uploader_id = $request->uploader;
             $post->title = $request->title;
             $post->copyright = $request->copyright;
             $post->description = $request->description;
-            $post->path = 'public/Image/'.$name;
+            $post->path = 'http://localhost/webapp/public/Image/'.$name;
             $post->save();
 
             return response()->json(['message' => 'You have successfully uploaded "' . $name . '"'], 200);

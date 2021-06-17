@@ -12,8 +12,8 @@
                     </blockquote>
 
                 <ul class="project-meta">
-                    <li><i class="fa fa-folder-open"></i><a href="">{{category}}</a></li>
-                    <li><i class="fa fa-calendar-o"></i>{{info['created_at']}}</li>
+                    <li><i class="fa fa-folder-open"></i><a :href="'http://localhost/webapp/gallery/' + currentCat">{{capitalization(category)}}</a></li>
+                    <li><i class="fa fa-calendar-o"></i>{{info['created_at'].substring(0, 10)}}</li>
                     <li><i class="fa fa-users"></i>{{info['copyright']}}</li>
                 </ul>
             </div> 
@@ -26,6 +26,7 @@
         data () {
             return {
                 info: null,
+                currentCat: ""
             }
         },
 
@@ -34,9 +35,11 @@
         mounted () {
             let apiLink = "";
 
+            this.currentCat = this.category;
+
             if(this.category == "digital art") {
                 apiLink = "http://localhost:8888/api/digital/" + this.art;
-                console.log(apiLink);
+                this.currentCat = "digital";
             } else if (this.category == "paintings") {
                 apiLink = "http://localhost:8888/api/paintings/" + this.art;
             } else if (this.category == "sculptures") {
@@ -47,6 +50,17 @@
 
             axios.get(apiLink)
                 .then(response => {this.info = response.data});
+        },
+
+        methods: {
+            capitalization: function (string) {
+                
+                if(string == "digital art") {
+                    return "Digital Art";
+                } else {
+                    return string[0].toUpperCase() + string.substring(1);
+                }
+            }
         }
     };
 </script>

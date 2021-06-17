@@ -1981,7 +1981,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      info: null
+      info: null,
+      currentCat: ""
     };
   },
   props: ['category', 'art'],
@@ -1989,10 +1990,11 @@ __webpack_require__.r(__webpack_exports__);
     var _this = this;
 
     var apiLink = "";
+    this.currentCat = this.category;
 
     if (this.category == "digital art") {
       apiLink = "http://localhost:8888/api/digital/" + this.art;
-      console.log(apiLink);
+      this.currentCat = "digital";
     } else if (this.category == "paintings") {
       apiLink = "http://localhost:8888/api/paintings/" + this.art;
     } else if (this.category == "sculptures") {
@@ -2004,6 +2006,15 @@ __webpack_require__.r(__webpack_exports__);
     axios.get(apiLink).then(function (response) {
       _this.info = response.data;
     });
+  },
+  methods: {
+    capitalization: function capitalization(string) {
+      if (string == "digital art") {
+        return "Digital Art";
+      } else {
+        return string[0].toUpperCase() + string.substring(1);
+      }
+    }
   }
 });
 
@@ -2077,7 +2088,7 @@ __webpack_require__.r(__webpack_exports__);
       category: ""
     };
   },
-  props: ['userID'],
+  props: ['userid'],
   methods: {
     onSelect: function onSelect() {
       this.file = this.$refs.file.files[0];
@@ -2096,7 +2107,7 @@ __webpack_require__.r(__webpack_exports__);
       formData.append('copyright', this.artist);
       formData.append('description', this.description);
       formData.append('image', this.file);
-      formData.append('uploader', this.userID);
+      formData.append('uploader', this.userid);
 
       if (this.category == "digital") {
         apiLink = "http://localhost:8888/api/digital";
@@ -2110,7 +2121,6 @@ __webpack_require__.r(__webpack_exports__);
 
       axios.post(apiLink, formData, config).then(function (response) {
         console.log("Response", response.data);
-        window.location.href = 'home';
       })["catch"](function (error) {
         console.log(error);
         alert("Please fill in all fields correctly");
@@ -2145,11 +2155,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      info: null
+      info: [],
+      currentCat: ""
     };
   },
   props: ['category'],
@@ -2157,9 +2167,11 @@ __webpack_require__.r(__webpack_exports__);
     var _this = this;
 
     var apiLink = "";
+    this.currentCat = this.category;
 
     if (this.category == "digital art") {
       apiLink = "http://localhost:8888/api/digital";
+      this.currentCat = "digital";
     } else if (this.category == "paintings") {
       apiLink = "http://localhost:8888/api/paintings";
     } else if (this.category == "sculptures") {
@@ -37859,12 +37871,20 @@ var render = function() {
         _c("ul", { staticClass: "project-meta" }, [
           _c("li", [
             _c("i", { staticClass: "fa fa-folder-open" }),
-            _c("a", { attrs: { href: "" } }, [_vm._v(_vm._s(_vm.category))])
+            _c(
+              "a",
+              {
+                attrs: {
+                  href: "http://localhost/webapp/gallery/" + _vm.currentCat
+                }
+              },
+              [_vm._v(_vm._s(_vm.capitalization(_vm.category)))]
+            )
           ]),
           _vm._v(" "),
           _c("li", [
             _c("i", { staticClass: "fa fa-calendar-o" }),
-            _vm._v(_vm._s(_vm.info["created_at"]))
+            _vm._v(_vm._s(_vm.info["created_at"].substring(0, 10)))
           ]),
           _vm._v(" "),
           _c("li", [
@@ -38111,11 +38131,31 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "row" }, [
-    _c("div", { staticClass: "post-masonry col-md-4 col-sm-6" }, [
-      _c("a", [_vm._v(_vm._s(_vm.info[0]["description"]))])
-    ])
-  ])
+  return _c(
+    "div",
+    { staticClass: "row" },
+    _vm._l(_vm.info, function(item, index) {
+      return _c(
+        "div",
+        { key: index, staticClass: "post-masonry col-md-4 col-sm-6" },
+        [
+          _c("div", { staticClass: "blog-thumb" }, [
+            _c("img", { attrs: { src: item.path } }),
+            _vm._v(" "),
+            _c("div", { staticClass: "overlay-b" }, [
+              _c("div", { staticClass: "overlay-inner" }, [
+                _c("a", {
+                  staticClass: "fa fa-link",
+                  attrs: { href: _vm.currentCat + "/" + item.id }
+                })
+              ])
+            ])
+          ])
+        ]
+      )
+    }),
+    0
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
