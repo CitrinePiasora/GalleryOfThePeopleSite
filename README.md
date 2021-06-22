@@ -27,11 +27,11 @@ Laravel is a web application framework with expressive, elegant syntax. We belie
 
 Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-## Important
+# Important
 The local version is synced with the deployed version, please use it wisely. This makes it not require any migrations to be done beforehand.
 
-## How to Run Project
-# Project Dependencies:
+# How to Run Project
+## Project Dependencies:
 Vue/Cli
 npm
 
