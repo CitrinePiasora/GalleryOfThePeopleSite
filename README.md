@@ -1,9 +1,3 @@
-# WebApplicationProject: Gallery of the People
-### Members:
-- Stanlly
-- Aqsha
-- Owen
-
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">
@@ -12,6 +6,12 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
+
+# WebApplicationProject: Gallery of the People
+### Members:
+- Stanlly
+- Aqsha
+- Owen
 
 # Important
 The local version is synced with the deployed version, please use it wisely. This makes it not require any migrations to be done beforehand.
