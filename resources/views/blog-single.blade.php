@@ -12,9 +12,15 @@
                     <h2>{{$data['db']}}</h2>
                 </div> <!-- /.section-header -->
             </div> <!-- /.row -->
-            <div id="app">
-                <entry v-bind:art="'{{$data['art']}}'" v-bind:category="'{{$data['db']}}'"></entry>
-            </div>
+            @if (Auth::check())
+                <div id="app">
+                    <entry v-bind:art="'{{$data['art']}}'" v-bind:category="'{{$data['db']}}'" v-bind:userid="'{{Auth::user()->id}}'"></entry>
+                </div>
+            @else
+                <div id="app">
+                    <entry v-bind:art="'{{$data['art']}}'" v-bind:category="'{{$data['db']}}'" v-bind:userid="'0'"></entry>
+                </div>
+            @endif
         </div> <!-- /.inner-content -->
     </div> <!-- /.content-wrapper -->
 

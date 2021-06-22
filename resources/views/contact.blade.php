@@ -66,7 +66,7 @@
                     <div class="box-content">
                         <h4 class="member-name">Stanlly</h4>
                         <span>Lead Programmer, Debugger</span>
-                        <p>Frontend</p>
+                        <p>Frontend, Backend</p>
                     </div>
                 </div> <!-- /.team-member -->
                 <div class="team-member col-md-6 col-sm-6">

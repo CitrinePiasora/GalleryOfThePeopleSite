@@ -1978,29 +1978,28 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      info: null,
-      currentCat: ""
+      info: null
     };
   },
-  props: ['category', 'art'],
+  props: ['category', 'art', 'userid'],
   mounted: function mounted() {
     var _this = this;
 
     var apiLink = "";
-    this.currentCat = this.category;
 
     if (this.category == "digital art") {
-      apiLink = "http://localhost:8888/api/digital/" + this.art;
-      this.currentCat = "digital";
+      apiLink = "https://galleryofthepeople.my.id/api/digital/" + this.art;
+      this.category = "digital";
     } else if (this.category == "paintings") {
-      apiLink = "http://localhost:8888/api/paintings/" + this.art;
+      apiLink = "https://galleryofthepeople.my.id/api/paintings/" + this.art;
     } else if (this.category == "sculptures") {
-      apiLink = "http://localhost:8888/api/sculptures/" + this.art;
+      apiLink = "https://galleryofthepeople.my.id/api/sculptures/" + this.art;
     } else if (this.category == "photos") {
-      apiLink = "http://localhost:8888/api/photos/" + this.art;
+      apiLink = "https://galleryofthepeople.my.id/api/photos/" + this.art;
     }
 
     axios.get(apiLink).then(function (response) {
@@ -2011,9 +2010,34 @@ __webpack_require__.r(__webpack_exports__);
     capitalization: function capitalization(string) {
       if (string == "digital art") {
         return "Digital Art";
+      } else if (string == "photos") {
+        return "Photography";
       } else {
         return string[0].toUpperCase() + string.substring(1);
       }
+    },
+    edit: function edit() {
+      window.location.href = 'https://galleryofthepeople.my.id/edit/' + this.category + '/' + this.art;
+    },
+    trashdel: function trashdel() {
+      var apiLink = "";
+
+      if (this.category == "digital art") {
+        apiLink = "https://galleryofthepeople.my.id/api/digital/" + this.art;
+        this.category = "digital";
+      } else if (this.category == "paintings") {
+        apiLink = "https://galleryofthepeople.my.id/api/paintings/" + this.art;
+      } else if (this.category == "sculptures") {
+        apiLink = "https://galleryofthepeople.my.id/api/sculptures/" + this.art;
+      } else if (this.category == "photos") {
+        apiLink = "https://galleryofthepeople.my.id/api/photos/" + this.art;
+      }
+
+      axios["delete"](apiLink).then(function () {
+        window.location.href = 'https://galleryofthepeople.my.id';
+      })["catch"](function (error) {
+        console.log(error);
+      });
     }
   }
 });
@@ -2078,6 +2102,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2088,14 +2113,51 @@ __webpack_require__.r(__webpack_exports__);
       category: ""
     };
   },
-  props: ['userid'],
+  props: ['userid', 'editor', 'entryid', 'cat'],
+  mounted: function mounted() {
+    var _this = this;
+
+    if (this.cat != null) {
+      var apiLink = "";
+
+      if (this.cat == "digital") {
+        apiLink = "https://galleryofthepeople.my.id/api/digital/" + this.entryid;
+      } else if (this.cat == "paintings") {
+        apiLink = "https://galleryofthepeople.my.id/api/paintings/" + this.entryid;
+      } else if (this.cat == "sculptures") {
+        apiLink = "https://galleryofthepeople.my.id/api/sculptures/" + this.entryid;
+      } else if (this.cat == "photos") {
+        apiLink = "https://galleryofthepeople.my.id/api/photos/" + this.entryid;
+      }
+
+      axios.get(apiLink).then(function (response) {
+        _this.title = response.data.title;
+        _this.description = response.data.description;
+        _this.artist = response.data.copyright;
+        _this.category = _this.cat;
+      });
+    }
+  },
   methods: {
     onSelect: function onSelect() {
       this.file = this.$refs.file.files[0];
     },
     submitData: function submitData(e) {
+      var _this2 = this;
+
       e.preventDefault();
       var apiLink = "";
+
+      if (this.category == "digital") {
+        apiLink = "https://galleryofthepeople.my.id/api/digital";
+      } else if (this.category == "paintings") {
+        apiLink = "https://galleryofthepeople.my.id/api/paintings";
+      } else if (this.category == "sculptures") {
+        apiLink = "https://galleryofthepeople.my.id/api/sculptures";
+      } else if (this.category == "photos") {
+        apiLink = "https://galleryofthepeople.my.id/api/photos";
+      }
+
       var config = {
         headers: {
           'content-type': 'multipart/form-data',
@@ -2106,25 +2168,35 @@ __webpack_require__.r(__webpack_exports__);
       formData.append('title', this.title);
       formData.append('copyright', this.artist);
       formData.append('description', this.description);
-      formData.append('image', this.file);
-      formData.append('uploader', this.userid);
 
-      if (this.category == "digital") {
-        apiLink = "http://localhost:8888/api/digital";
-      } else if (this.category == "paintings") {
-        apiLink = "http://localhost:8888/api/paintings";
-      } else if (this.category == "sculptures") {
-        apiLink = "http://localhost:8888/api/sculptures";
-      } else if (this.category == "photography") {
-        apiLink = "http://localhost:8888/api/photos";
+      if (this.editor == 1) {
+        formData.append('entryid', this.entryid);
+        apiLink = apiLink + '/' + this.entryid + '/edit';
+        axios.get(apiLink, {
+          params: {
+            entryid: this.entryid,
+            title: this.title,
+            artiste: this.artist,
+            desc: this.description
+          },
+          config: config
+        }).then(function (response) {
+          console.log("Response", response.data);
+          window.location.href = 'https://galleryofthepeople.my.id/gallery/' + _this2.cat + '/' + _this2.entryid;
+        })["catch"](function (error) {
+          console.log(error);
+        });
+      } else {
+        formData.append('uploader', this.userid);
+        formData.append('image', this.file);
+        axios.post(apiLink, formData, config).then(function (response) {
+          console.log("Response", response.data);
+          window.location.href = 'https://galleryofthepeople.my.id';
+        })["catch"](function (error) {
+          console.log(error);
+          alert("Please fill in all fields correctly");
+        });
       }
-
-      axios.post(apiLink, formData, config).then(function (response) {
-        console.log("Response", response.data);
-      })["catch"](function (error) {
-        console.log(error);
-        alert("Please fill in all fields correctly");
-      });
     }
   }
 });
@@ -2170,14 +2242,14 @@ __webpack_require__.r(__webpack_exports__);
     this.currentCat = this.category;
 
     if (this.category == "digital art") {
-      apiLink = "http://localhost:8888/api/digital";
+      apiLink = "https://galleryofthepeople.my.id/api/digital";
       this.currentCat = "digital";
     } else if (this.category == "paintings") {
-      apiLink = "http://localhost:8888/api/paintings";
+      apiLink = "https://galleryofthepeople.my.id/api/paintings";
     } else if (this.category == "sculptures") {
-      apiLink = "http://localhost:8888/api/sculptures";
+      apiLink = "https://galleryofthepeople.my.id/api/sculptures";
     } else if (this.category == "photos") {
-      apiLink = "http://localhost:8888/api/photos";
+      apiLink = "https://galleryofthepeople.my.id/api/photos";
     }
 
     axios.get(apiLink).then(function (response) {
@@ -37875,7 +37947,8 @@ var render = function() {
               "a",
               {
                 attrs: {
-                  href: "http://localhost/webapp/gallery/" + _vm.currentCat
+                  href:
+                    "http://galleryofthepeople.my.id/gallery/" + _vm.category
                 }
               },
               [_vm._v(_vm._s(_vm.capitalization(_vm.category)))]
@@ -37890,6 +37963,46 @@ var render = function() {
           _c("li", [
             _c("i", { staticClass: "fa fa-users" }),
             _vm._v(_vm._s(_vm.info["copyright"]))
+          ]),
+          _vm._v(" "),
+          _c("li", [
+            _c("input", {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.info.uploader_id == _vm.userid ? true : false,
+                  expression: "info.uploader_id == userid ? true: false"
+                }
+              ],
+              staticClass: "mainBtn",
+              attrs: { value: "edit", type: "submit" },
+              on: {
+                click: function($event) {
+                  return _vm.edit()
+                }
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("li", [
+            _c("input", {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.info.uploader_id == _vm.userid ? true : false,
+                  expression: "info.uploader_id == userid ? true: false"
+                }
+              ],
+              staticClass: "mainBtn",
+              attrs: { value: "delete", type: "submit" },
+              on: {
+                click: function($event) {
+                  return _vm.trashdel()
+                }
+              }
+            })
           ])
         ])
       ])
@@ -37996,6 +38109,14 @@ var render = function() {
                     ]),
                     _vm._v(" "),
                     _c("input", {
+                      directives: [
+                        {
+                          name: "show",
+                          rawName: "v-show",
+                          value: _vm.editor == 1 ? false : true,
+                          expression: "editor == 1 ? false: true"
+                        }
+                      ],
                       ref: "file",
                       staticClass: "form-control-image",
                       attrs: {
@@ -38005,6 +38126,24 @@ var render = function() {
                         accept: "image/*"
                       },
                       on: { change: _vm.onSelect }
+                    }),
+                    _vm._v(" "),
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "show",
+                          rawName: "v-show",
+                          value: _vm.editor != 1 ? false : true,
+                          expression: "editor != 1 ? false: true"
+                        }
+                      ],
+                      attrs: {
+                        name: "image",
+                        type: "text",
+                        id: "name",
+                        value: "Image has already been uploaded",
+                        disabled: ""
+                      }
                     })
                   ]),
                   _vm._v(" "),
@@ -38024,7 +38163,11 @@ var render = function() {
                             expression: "category"
                           }
                         ],
-                        attrs: { name: "category", id: "category" },
+                        attrs: {
+                          name: "category",
+                          id: "category",
+                          disabled: _vm.editor
+                        },
                         on: {
                           change: function($event) {
                             var $$selectedVal = Array.prototype.filter
@@ -50685,8 +50828,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! D:\Xampp\htdocs\webapp\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! D:\Xampp\htdocs\webapp\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\xampp\htdocs\gotp\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\gotp\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

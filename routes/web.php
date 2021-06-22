@@ -23,7 +23,7 @@ use App\sculptures;
 
 Route::get('logout', 'LogOutController@LogOut')->name('logout');
 
-Route::view('/home', 'home')->name('home');
+Route::view('/', 'main')->name('home');
 
 Route::get('/contact', function () {
     return view('contact');
@@ -52,11 +52,9 @@ Route::group(['middleware' => ['prevent-back-history','auth']],function(){
         return view('auth.login');
     });
 
-    Route::view('/upload', 'submit')->name('uploader');
+    Route::get('/upload', 'EntryController@newEntry')->name('uploader');
+
+    Route::get('/edit/{category}/{id}', 'EntryController@editEntry')->name('editor');
 });
 
-//Route::get('/gallery/{db}/{title}/{id}', ['as' => 'entry', 'uses' => 'entryController@showGallery']);
-
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');

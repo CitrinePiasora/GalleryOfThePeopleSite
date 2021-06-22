@@ -36,7 +36,7 @@ class PhotoPostsController extends Controller
             $post->title = $request->title;
             $post->copyright = $request->copyright;
             $post->description = $request->description;
-            $post->path = 'http://localhost/webapp/public/Image/'.$name;
+            $post->path = 'http://galleryofthepeople.my.id/public/Image/'.$name;
             $post->save();
 
             return response()->json(['message' => 'You have successfully uploaded "' . $name . '"'], 200);
@@ -63,9 +63,19 @@ class PhotoPostsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function edit(Request $request)
     {
-        //
+        try{
+            $post = photography::find($request->entryid);
+            $post->title = $request->title;
+            $post->copyright = $request->artiste;
+            $post->description = $request->desc;
+            $post->save();
+
+            return response()->json(['message' => 'You have successfully updated the post'], 200);
+        } catch(\Exception $e) {
+            return response()->json(['message' => 'error']);
+        }
     }
 
     /**
@@ -76,6 +86,6 @@ class PhotoPostsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        return photography::destroy($id);
     }
 }

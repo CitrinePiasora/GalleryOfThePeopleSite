@@ -6,15 +6,16 @@
         <div class="project-infos col-md-12">
             <div class="box-content">
                 <h2 class="project-title">{{info['title']}}</h2>
-                
                     <blockquote>
                         {{info['description']}}
                     </blockquote>
 
                 <ul class="project-meta">
-                    <li><i class="fa fa-folder-open"></i><a :href="'http://localhost/webapp/gallery/' + currentCat">{{capitalization(category)}}</a></li>
+                    <li><i class="fa fa-folder-open"></i><a :href="'http://galleryofthepeople.my.id/gallery/' + category">{{capitalization(category)}}</a></li>
                     <li><i class="fa fa-calendar-o"></i>{{info['created_at'].substring(0, 10)}}</li>
                     <li><i class="fa fa-users"></i>{{info['copyright']}}</li>
+                    <li><input class="mainBtn" value="edit" @click="edit()" type="submit" v-show="info.uploader_id == userid ? true: false"/></li>
+                    <li><input class="mainBtn" value="delete" @click="trashdel()" type="submit" v-show="info.uploader_id == userid ? true: false"/></li>
                 </ul>
             </div> 
         </div>
@@ -26,26 +27,23 @@
         data () {
             return {
                 info: null,
-                currentCat: ""
             }
         },
 
-        props: ['category', 'art'],
+        props: ['category', 'art', 'userid'],
 
         mounted () {
             let apiLink = "";
 
-            this.currentCat = this.category;
-
             if(this.category == "digital art") {
-                apiLink = "http://localhost:8888/api/digital/" + this.art;
-                this.currentCat = "digital";
+                apiLink = "https://galleryofthepeople.my.id/api/digital/" + this.art;
+                this.category = "digital";
             } else if (this.category == "paintings") {
-                apiLink = "http://localhost:8888/api/paintings/" + this.art;
+                apiLink = "https://galleryofthepeople.my.id/api/paintings/" + this.art;
             } else if (this.category == "sculptures") {
-                apiLink = "http://localhost:8888/api/sculptures/" + this.art;
+                apiLink = "https://galleryofthepeople.my.id/api/sculptures/" + this.art;
             } else if (this.category == "photos") {
-                apiLink = "http://localhost:8888/api/photos/" + this.art;                    
+                apiLink = "https://galleryofthepeople.my.id/api/photos/" + this.art;                    
             }
 
             axios.get(apiLink)
@@ -57,10 +55,40 @@
                 
                 if(string == "digital art") {
                     return "Digital Art";
+                } else if (string == "photos") {
+                    return "Photography";
                 } else {
                     return string[0].toUpperCase() + string.substring(1);
                 }
+            },
+
+            edit: function() {
+                window.location.href = 'https://galleryofthepeople.my.id/edit/' + this.category + '/' + this.art;
+            },
+
+            trashdel: function() {
+
+                let apiLink = "";
+
+                if(this.category == "digital art") {
+                    apiLink = "https://galleryofthepeople.my.id/api/digital/" + this.art;
+                    this.category = "digital";
+                } else if (this.category == "paintings") {
+                    apiLink = "https://galleryofthepeople.my.id/api/paintings/" + this.art;
+                } else if (this.category == "sculptures") {
+                    apiLink = "https://galleryofthepeople.my.id/api/sculptures/" + this.art;
+                } else if (this.category == "photos") {
+                    apiLink = "https://galleryofthepeople.my.id/api/photos/" + this.art;                    
+                }
+
+                axios.delete(apiLink)
+                    .then(function () {
+                        window.location.href = 'https://galleryofthepeople.my.id';
+                    })
+                    .catch( function (error) {
+                        console.log(error);
+                    });
+                }
             }
         }
-    };
 </script>

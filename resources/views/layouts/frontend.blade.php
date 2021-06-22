@@ -16,6 +16,7 @@
     Artcore Template
     http://www.templatemo.com/preview/templatemo_423_artcore
     -->
+    <link rel="shortcut icon" href="{{ asset('public/favicon.ico') }}"  type='image/x-icon'>
     <link rel="stylesheet" href="{{url('public/css/bootstrap.css')}}">
     <link rel="stylesheet" href="{{url('public/css/font-awesome.css')}}">
     <link rel="stylesheet" href="{{url('public/css/animate.css')}}">

@@ -26,6 +26,10 @@ body {
 	font-weight: normal;
 }
 
+.hide {
+  visibility: hidden !important;
+}
+
 ol,
 ul {
   list-style: none;

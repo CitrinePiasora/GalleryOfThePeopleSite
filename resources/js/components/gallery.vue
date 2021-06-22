@@ -30,14 +30,14 @@
             this.currentCat = this.category;
 
             if(this.category == "digital art") {
-                apiLink = "http://localhost:8888/api/digital";
+                apiLink = "https://galleryofthepeople.my.id/api/digital";
                 this.currentCat = "digital";
             } else if (this.category == "paintings") {
-                apiLink = "http://localhost:8888/api/paintings"
+                apiLink = "https://galleryofthepeople.my.id/api/paintings";
             } else if (this.category == "sculptures") {
-                apiLink = "http://localhost:8888/api/sculptures";
+                apiLink = "https://galleryofthepeople.my.id/api/sculptures";
             } else if (this.category == "photos") {
-                apiLink = "http://localhost:8888/api/photos";                    
+                apiLink = "https://galleryofthepeople.my.id/api/photos";                    
             }
 
             axios.get(apiLink)
