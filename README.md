@@ -32,3 +32,6 @@ npm install
 4. Import `galleryo_database.sql` into a new database: `galleryo_database`
 5. Open the homepage by going to http://localhost/folder_name
 6. Enjoy
+
+# Extra Credits
+Template Used: https://templatemo.com/tm-423-artcore
