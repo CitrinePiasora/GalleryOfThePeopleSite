@@ -13,8 +13,6 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
 
-# A Laravel Project
-
 # Important
 The local version is synced with the deployed version, please use it wisely. This makes it not require any migrations to be done beforehand.
 
