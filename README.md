@@ -33,13 +33,14 @@ The local version is synced with the deployed version, please use it wisely. Thi
 # How to Run Project
 ## Project Dependencies:
 Vue/Cli
-npm
+Node.js (For npm)
 
 1. Download all files (Code->Download Zip)
 2. Extract Files to a new folder (example: gotp) inside your htdocs folder
 3. Open CMD/Powershell inside the extracted folder and run the following commands
 ```
 composer update
+npm install -g @vue/cli
 npm install
 ```
 4. Import `galleryo_database.sql` into a new database: `galleryo_database`
