@@ -27,6 +27,9 @@ Laravel is a web application framework with expressive, elegant syntax. We belie
 
 Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
+## Important
+The local version is synced with the deployed version, please use it wisely. This makes it not require any migrations to be done beforehand.
+
 ## How to Run Project
 # Project Dependencies:
 Vue/Cli
@@ -35,8 +38,10 @@ npm
 1. Download all files (Code->Download Zip)
 2. Extract Files to a new folder (example: gotp) inside your htdocs folder
 3. Open CMD/Powershell inside the extracted folder and run the following commands
-```composer update
+```
+composer update
 npm install
 ```
-4. Open the homepage by going to http://localhost/folder_name
-5. Enjoy
+4. Import `galleryo_database.sql` into a new database: `galleryo_database`
+5. Open the homepage by going to http://localhost/folder_name
+6. Enjoy
