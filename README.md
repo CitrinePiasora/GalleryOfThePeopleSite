@@ -7,7 +7,7 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
 
-# WebApplicationProject: Gallery of the People
+# Gallery of the People
 ### Members:
 - Stanlly
 - Aqsha
