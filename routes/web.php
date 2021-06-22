@@ -33,8 +33,6 @@ Route::get('/gallery/photography', function() {
     return view('subblog')->with('category', 'photos');
 })->name('photos');
 
-Route::get('/gallery/{category}/{id}', 'EntryController@getEntry');
-
 Route::get('/gallery/sculptures', function() {
     return view('subblog')->with('category', 'sculptures');
 })->name('sculps');
@@ -46,6 +44,8 @@ Route::get('/gallery/paintings', function() {
 Route::get('/gallery/digital', function() {
     return view('subblog')->with('category', 'digital art');
 })->name('digital');
+
+Route::get('/gallery/{category}/{id}', 'EntryController@getEntry');
 
 Route::group(['middleware' => ['prevent-back-history','auth']],function(){
     Route::get('/login', function () {

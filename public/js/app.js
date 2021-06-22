@@ -2017,7 +2017,8 @@ __webpack_require__.r(__webpack_exports__);
       }
     },
     edit: function edit() {
-      window.location.href = 'https://galleryofthepeople.my.id/edit/' + this.category + '/' + this.art;
+      var redirect = 'http://localhost/gotp/edit/' + this.category + '/' + this.art;
+      window.location.href = redirect;
     },
     trashdel: function trashdel() {
       var apiLink = "";
@@ -2110,7 +2111,8 @@ __webpack_require__.r(__webpack_exports__);
       artist: "",
       file: null,
       description: "",
-      category: ""
+      category: "",
+      postUpId: 0
     };
   },
   props: ['userid', 'editor', 'entryid', 'cat'],
@@ -2135,6 +2137,7 @@ __webpack_require__.r(__webpack_exports__);
         _this.description = response.data.description;
         _this.artist = response.data.copyright;
         _this.category = _this.cat;
+        _this.postUpId = response.data.uploader_id;
       });
     }
   },
@@ -38032,224 +38035,240 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "contact-form" }, [
-    _c("div", { staticClass: "box-content col-md-12" }, [
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-md-7" }, [
-          _c("div", { staticClass: "contact-form-inner" }, [
-            _c(
-              "form",
-              {
-                attrs: { id: "app" },
-                on: {
-                  submit: function($event) {
-                    $event.preventDefault()
-                    return _vm.submitData.apply(null, arguments)
+    _c(
+      "div",
+      {
+        directives: [
+          {
+            name: "show",
+            rawName: "v-show",
+            value: _vm.editor != 1 && _vm.postUpId != _vm.userid ? false : true,
+            expression: "editor != 1 && postUpId != userid ? false: true"
+          }
+        ],
+        staticClass: "box-content col-md-12"
+      },
+      [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-7" }, [
+            _c("div", { staticClass: "contact-form-inner" }, [
+              _c(
+                "form",
+                {
+                  attrs: { id: "app" },
+                  on: {
+                    submit: function($event) {
+                      $event.preventDefault()
+                      return _vm.submitData.apply(null, arguments)
+                    }
                   }
-                }
-              },
-              [
-                _c("div", { staticClass: "form-group" }, [
-                  _c("p", [
-                    _c("label", { attrs: { for: "name" } }, [
-                      _vm._v("Project Title:")
-                    ]),
-                    _vm._v(" "),
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.title,
-                          expression: "title"
-                        }
-                      ],
-                      attrs: { name: "name", type: "text", id: "name" },
-                      domProps: { value: _vm.title },
-                      on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.title = $event.target.value
-                        }
-                      }
-                    })
-                  ]),
-                  _vm._v(" "),
-                  _c("p", [
-                    _c("label", { attrs: { for: "copyright" } }, [
-                      _vm._v("Artist:")
-                    ]),
-                    _vm._v(" "),
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.artist,
-                          expression: "artist"
-                        }
-                      ],
-                      attrs: { name: "copyright", type: "text", id: "name" },
-                      domProps: { value: _vm.artist },
-                      on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.artist = $event.target.value
-                        }
-                      }
-                    })
-                  ]),
-                  _vm._v(" "),
-                  _c("p", [
-                    _c("label", { attrs: { for: "image" } }, [
-                      _vm._v("Image:")
-                    ]),
-                    _vm._v(" "),
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "show",
-                          rawName: "v-show",
-                          value: _vm.editor == 1 ? false : true,
-                          expression: "editor == 1 ? false: true"
-                        }
-                      ],
-                      ref: "file",
-                      staticClass: "form-control-image",
-                      attrs: {
-                        name: "image[]",
-                        type: "file",
-                        id: "image",
-                        accept: "image/*"
-                      },
-                      on: { change: _vm.onSelect }
-                    }),
-                    _vm._v(" "),
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "show",
-                          rawName: "v-show",
-                          value: _vm.editor != 1 ? false : true,
-                          expression: "editor != 1 ? false: true"
-                        }
-                      ],
-                      attrs: {
-                        name: "image",
-                        type: "text",
-                        id: "name",
-                        value: "Image has already been uploaded",
-                        disabled: ""
-                      }
-                    })
-                  ]),
-                  _vm._v(" "),
-                  _c("p", [
-                    _c("label", { attrs: { for: "category" } }, [
-                      _vm._v("Category:")
-                    ]),
-                    _vm._v(" "),
-                    _c(
-                      "select",
-                      {
+                },
+                [
+                  _c("div", { staticClass: "form-group" }, [
+                    _c("p", [
+                      _c("label", { attrs: { for: "name" } }, [
+                        _vm._v("Project Title:")
+                      ]),
+                      _vm._v(" "),
+                      _c("input", {
                         directives: [
                           {
                             name: "model",
                             rawName: "v-model",
-                            value: _vm.category,
-                            expression: "category"
+                            value: _vm.title,
+                            expression: "title"
+                          }
+                        ],
+                        attrs: { name: "name", type: "text", id: "name" },
+                        domProps: { value: _vm.title },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.title = $event.target.value
+                          }
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("p", [
+                      _c("label", { attrs: { for: "copyright" } }, [
+                        _vm._v("Artist:")
+                      ]),
+                      _vm._v(" "),
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.artist,
+                            expression: "artist"
+                          }
+                        ],
+                        attrs: { name: "copyright", type: "text", id: "name" },
+                        domProps: { value: _vm.artist },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.artist = $event.target.value
+                          }
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("p", [
+                      _c("label", { attrs: { for: "image" } }, [
+                        _vm._v("Image:")
+                      ]),
+                      _vm._v(" "),
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "show",
+                            rawName: "v-show",
+                            value: _vm.editor == 1 ? false : true,
+                            expression: "editor == 1 ? false: true"
+                          }
+                        ],
+                        ref: "file",
+                        staticClass: "form-control-image",
+                        attrs: {
+                          name: "image[]",
+                          type: "file",
+                          id: "image",
+                          accept: "image/*"
+                        },
+                        on: { change: _vm.onSelect }
+                      }),
+                      _vm._v(" "),
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "show",
+                            rawName: "v-show",
+                            value: _vm.editor != 1 ? false : true,
+                            expression: "editor != 1 ? false: true"
                           }
                         ],
                         attrs: {
-                          name: "category",
-                          id: "category",
-                          disabled: _vm.editor
-                        },
-                        on: {
-                          change: function($event) {
-                            var $$selectedVal = Array.prototype.filter
-                              .call($event.target.options, function(o) {
-                                return o.selected
-                              })
-                              .map(function(o) {
-                                var val = "_value" in o ? o._value : o.value
-                                return val
-                              })
-                            _vm.category = $event.target.multiple
-                              ? $$selectedVal
-                              : $$selectedVal[0]
-                          }
+                          name: "image",
+                          type: "text",
+                          id: "name",
+                          value: "Image has already been uploaded",
+                          disabled: ""
                         }
-                      },
-                      [
-                        _c(
-                          "option",
-                          { attrs: { disabled: "", selected: "", value: "" } },
-                          [_vm._v(" -- select an option -- ")]
-                        ),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "paintings" } }, [
-                          _vm._v("Physical Art")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "sculptures" } }, [
-                          _vm._v("Sculptures")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "photography" } }, [
-                          _vm._v("Photography")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "digital" } }, [
-                          _vm._v("Digital Art")
-                        ])
-                      ]
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("p", [
-                    _c("label", { attrs: { for: "desc" } }, [
-                      _vm._v("Description:")
+                      })
                     ]),
                     _vm._v(" "),
-                    _c("textarea", {
-                      directives: [
+                    _c("p", [
+                      _c("label", { attrs: { for: "category" } }, [
+                        _vm._v("Category:")
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "select",
                         {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.description,
-                          expression: "description"
-                        }
-                      ],
-                      attrs: { name: "desc", id: "desc" },
-                      domProps: { value: _vm.description },
-                      on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.category,
+                              expression: "category"
+                            }
+                          ],
+                          attrs: {
+                            name: "category",
+                            id: "category",
+                            disabled: _vm.editor
+                          },
+                          on: {
+                            change: function($event) {
+                              var $$selectedVal = Array.prototype.filter
+                                .call($event.target.options, function(o) {
+                                  return o.selected
+                                })
+                                .map(function(o) {
+                                  var val = "_value" in o ? o._value : o.value
+                                  return val
+                                })
+                              _vm.category = $event.target.multiple
+                                ? $$selectedVal
+                                : $$selectedVal[0]
+                            }
                           }
-                          _vm.description = $event.target.value
+                        },
+                        [
+                          _c(
+                            "option",
+                            {
+                              attrs: { disabled: "", selected: "", value: "" }
+                            },
+                            [_vm._v(" -- select an option -- ")]
+                          ),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "paintings" } }, [
+                            _vm._v("Physical Art")
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "sculptures" } }, [
+                            _vm._v("Sculptures")
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "photography" } }, [
+                            _vm._v("Photography")
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "digital" } }, [
+                            _vm._v("Digital Art")
+                          ])
+                        ]
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("p", [
+                      _c("label", { attrs: { for: "desc" } }, [
+                        _vm._v("Description:")
+                      ]),
+                      _vm._v(" "),
+                      _c("textarea", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.description,
+                            expression: "description"
+                          }
+                        ],
+                        attrs: { name: "desc", id: "desc" },
+                        domProps: { value: _vm.description },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.description = $event.target.value
+                          }
                         }
-                      }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("input", {
+                      staticClass: "mainBtn",
+                      attrs: { type: "submit", id: "submit", value: "upload" }
                     })
-                  ]),
-                  _vm._v(" "),
-                  _c("input", {
-                    staticClass: "mainBtn",
-                    attrs: { type: "submit", id: "submit", value: "upload" }
-                  })
-                ])
-              ]
-            )
-          ]),
-          _vm._v(" "),
-          _c("div", { attrs: { id: "message" } })
+                  ])
+                ]
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { attrs: { id: "message" } })
+          ])
         ])
-      ])
-    ])
+      ]
+    )
   ])
 }
 var staticRenderFns = []

@@ -63,7 +63,8 @@
             },
 
             edit: function() {
-                window.location.href = 'https://galleryofthepeople.my.id/edit/' + this.category + '/' + this.art;
+                let redirect = 'http://localhost/gotp/edit/' + this.category + '/' + this.art;
+                window.location.href = redirect;
             },
 
             trashdel: function() {

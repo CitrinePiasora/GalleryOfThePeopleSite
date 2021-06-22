@@ -1,6 +1,6 @@
 <template>
     <div class="contact-form">
-        <div class="box-content col-md-12">
+        <div class="box-content col-md-12" v-show="editor != 1 && postUpId != userid ? false: true">
             <div class="row">
                 <div class="col-md-7">
                     <div class="contact-form-inner">
@@ -56,7 +56,8 @@
                 artist: "",
                 file: null,
                 description: "",
-                category: ""
+                category: "",
+                postUpId: 0,
             }
         },
         
@@ -82,6 +83,7 @@
                         this.description = response.data.description;
                         this.artist = response.data.copyright;
                         this.category = this.cat;
+                        this.postUpId = response.data.uploader_id;
                     });
             }
         },
