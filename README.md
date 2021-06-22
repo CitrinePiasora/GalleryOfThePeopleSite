@@ -34,4 +34,4 @@ npm install
 6. Enjoy
 
 # Extra Credits
-Template Used: https://templatemo.com/tm-423-artcore
+Theme Used: https://templatemo.com/tm-423-artcore
