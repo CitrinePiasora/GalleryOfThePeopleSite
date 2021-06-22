@@ -44,7 +44,7 @@
             <div class="menu-wrapper col-md-9 col-sm-6 col-xs-4">
                 <a href="#" class="toggle-menu visible-sm visible-xs"><i class="fa fa-bars"></i></a>
                 <ul class="sf-menu hidden-xs hidden-sm">
-                    <li class="{{ Request::is('home') ? 'active' : '' }}"><a href="{{route('home')}}">Home</a></li>
+                    <li class="{{ Route::currentRouteNamed('home') ? 'active' : '' }}"><a href="{{route('home')}}">Home</a></li>
                     <li class="{{ Request::is('gallery/*') ? 'active' : '' }}"><a>Artwork</a>
                         <ul>
                             <li><a href="{{url('gallery/paintings')}}">Physical Art</a></li>
