@@ -30,8 +30,9 @@ npm install -g @vue/cli
 npm install
 ```
 4. Import `galleryo_database.sql` into a new database: `galleryo_database`
-5. Open the homepage by going to http://localhost/folder_name
-6. Enjoy
+5. (optional) if `.env` is required, rename `.env.example` to `.env`
+6. Open the homepage by going to http://localhost/folder_name
+7. Enjoy
 
 # Extra Credits
 Theme Used: https://templatemo.com/tm-423-artcore
