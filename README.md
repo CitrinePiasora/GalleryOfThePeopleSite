@@ -8,10 +8,6 @@
 </p>
 
 # Gallery of the People
-### Members:
-- Stanlly
-- Aqsha
-- Owen
 
 # Important
 The local version is synced with the deployed version, please use it wisely. This makes it not require any migrations to be done beforehand.
